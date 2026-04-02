@@ -5,7 +5,8 @@ const phases = [
   { label: 'Shift & Capitals', lessons: '25-30' },
   { label: 'Numbers', lessons: '31-36' },
   { label: 'Punctuation', lessons: '37-42' },
-  { label: 'Mastery', lessons: '43-50' }
+  { label: 'Core Mastery', lessons: '43-50' },
+  { label: 'Advanced Mastery', lessons: '51-100' }
 ];
 
 export default function RoadmapPreview() {

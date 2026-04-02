@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { formatDuration } from '../../utils/typing';
+import { TOTAL_LESSONS } from '../../utils/constants';
 
 export default function ResultCard({ result, lesson }) {
-  const nextLessonId = Math.min(50, lesson.id + 1);
+  const nextLessonId = Math.min(TOTAL_LESSONS, lesson.id + 1);
   const feedbackTier =
     result.accuracy >= 97 && result.wpm >= 32
       ? 'Outstanding performance. You are typing with advanced control.'

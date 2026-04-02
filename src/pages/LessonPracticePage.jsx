@@ -7,6 +7,7 @@ import { getLessonById } from '../data/lessons';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import useTypingSession from '../hooks/useTypingSession';
 import { saveRecentResult } from '../utils/storage';
+import { TOTAL_LESSONS } from '../utils/constants';
 
 export default function LessonPracticePage() {
   const { lessonId } = useParams();
@@ -22,7 +23,7 @@ export default function LessonPracticePage() {
     targetText: lesson?.content ?? ''
   });
 
-  const nextLessonId = useMemo(() => Math.min(50, numericLessonId + 1), [numericLessonId]);
+  const nextLessonId = useMemo(() => Math.min(TOTAL_LESSONS, numericLessonId + 1), [numericLessonId]);
 
   if (!lesson) return <Navigate to="/lessons" replace />;
   if (!isUnlocked) return <Navigate to="/lessons" replace />;
@@ -44,7 +45,7 @@ export default function LessonPracticePage() {
       lessonId: numericLessonId,
       lessonTitle: lesson.title,
       ...result,
-      unlockedNextLesson: result.passed && numericLessonId < 50
+      unlockedNextLesson: result.passed && numericLessonId < TOTAL_LESSONS
     });
 
     toast.success(result.passed ? 'Lesson passed and progress saved' : 'Lesson saved. Retry to unlock next lesson');

@@ -20,7 +20,7 @@ import { LESSON_CATEGORIES } from '../data/lessons';
 const features = [
   {
     icon: FiLayers,
-    title: '50 Guided Lessons',
+    title: '100 Guided Lessons',
     description: 'A structured journey from fundamentals to final mastery.'
   },
   {

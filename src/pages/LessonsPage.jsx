@@ -50,7 +50,7 @@ export default function LessonsPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <SectionHeader
           eyebrow="Lesson Path"
-          title="50 lessons to build complete typing fluency"
+          title="100 lessons to build complete typing fluency"
           description="Progress unlocks sequentially. Complete your current lesson to move forward."
           rightSlot={
             <Link
