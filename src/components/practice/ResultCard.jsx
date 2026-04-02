@@ -3,6 +3,12 @@ import { formatDuration } from '../../utils/typing';
 
 export default function ResultCard({ result, lesson }) {
   const nextLessonId = Math.min(50, lesson.id + 1);
+  const feedbackTier =
+    result.accuracy >= 97 && result.wpm >= 32
+      ? 'Outstanding performance. You are typing with advanced control.'
+      : result.accuracy >= 93
+        ? 'Strong result. Keep practicing to raise speed further.'
+        : 'Solid effort. Focus on precision before accelerating.';
 
   return (
     <section className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-panel sm:p-8">
@@ -21,6 +27,7 @@ export default function ResultCard({ result, lesson }) {
         {result.passed
           ? 'Excellent work. Your next lesson has been unlocked and your progress is saved.'
           : 'Good effort. Retry this lesson to improve your accuracy and speed before advancing.'}
+        <p className="mt-2 text-slate-300">{feedbackTier}</p>
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
