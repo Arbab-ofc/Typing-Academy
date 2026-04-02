@@ -1,5 +1,3 @@
-<div align="center">
-
 # Typing Academy
 
 A premium, lesson-first typewriting platform with **250 guided practices**, dual learning modes, modern UI, and local-first analytics.
@@ -11,8 +9,6 @@ A premium, lesson-first typewriting platform with **250 guided practices**, dual
 [![Toastify](https://img.shields.io/badge/React_Toastify-UI_Notifications-FF6A3D)](https://fkhadra.github.io/react-toastify/)
 [![Status](https://img.shields.io/badge/Status-Production_Ready-0EA5E9)](#)
 [![Lessons](https://img.shields.io/badge/Lessons-250-16A34A)](#curriculum)
-
-</div>
 
 ---
 
