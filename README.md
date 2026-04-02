@@ -128,25 +128,19 @@ Free practice mode:
 ## Curriculum Map (250 Lessons)
 
 ```mermaid
-mindmap
-  root((Typing Academy 250))
-    Foundation Core
-      Lessons 1-8
-      Lessons 101-150
-      Lessons 151-250
-    Top Row
-      Lessons 9-16
-    Bottom Row
-      Lessons 17-24
-    Shift and Capitals
-      Lessons 25-30
-    Numbers
-      Lessons 31-36
-    Punctuation and Symbols
-      Lessons 37-42
-    Mastery Progression
-      Lessons 43-50
-      Lessons 51-100
+flowchart TD
+  A[Typing Academy: 250 Lessons]
+  A --> B[Foundations: 1-8]
+  A --> C[Top Row: 9-16]
+  A --> D[Bottom Row: 17-24]
+  A --> E[Shift and Capitals: 25-30]
+  A --> F[Numbers: 31-36]
+  A --> G[Punctuation and Symbols: 37-42]
+  A --> H[Core Mastery: 43-50]
+  A --> I[Advanced Mastery: 51-100]
+  A --> J[Foundation Booster 1: 101-150]
+  A --> K[Foundation Booster 2: 151-200]
+  A --> L[Foundation Booster 3: 201-250]
 ```
 
 ### High-Level Phase Distribution
