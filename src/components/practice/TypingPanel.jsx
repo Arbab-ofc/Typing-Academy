@@ -22,10 +22,19 @@ export default function TypingPanel({ lesson, session, onComplete, textSize = 'm
     onTextChange,
     restart
   } = session;
+  const motivation =
+    metrics.progress < 25
+      ? 'Set your rhythm. Accuracy first.'
+      : metrics.progress < 60
+        ? 'Great pace. Keep your shoulders relaxed.'
+        : metrics.progress < 100
+          ? 'Final stretch. Stay precise.'
+          : 'Finished. Review your result and continue.';
 
   return (
     <div className={`rounded-3xl border border-white/10 bg-white/5 ${panelClassMap[panelSize] || panelClassMap.comfortable}`}>
       <StatsBar elapsedSeconds={elapsedSeconds} metrics={metrics} />
+      <p className="text-xs uppercase tracking-[0.16em] text-slate-400">{motivation}</p>
 
       {!isStarted ? (
         <p className="rounded-xl border border-dashed border-white/20 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
