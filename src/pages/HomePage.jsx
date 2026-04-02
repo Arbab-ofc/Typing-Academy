@@ -7,6 +7,7 @@ import {
   FiTrendingUp
 } from 'react-icons/fi';
 import HeroSection from '../components/home/HeroSection';
+import DailyPracticeBanner from '../components/home/DailyPracticeBanner';
 import FeatureCard from '../components/home/FeatureCard';
 import RoadmapPreview from '../components/home/RoadmapPreview';
 import CategoryPreview from '../components/home/CategoryPreview';
@@ -54,6 +55,7 @@ export default function HomePage() {
   return (
     <div className="space-y-14 sm:space-y-16">
       <HeroSection currentLessonId={progress.currentLesson} />
+      <DailyPracticeBanner currentLessonId={progress.currentLesson} />
 
       <section>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
