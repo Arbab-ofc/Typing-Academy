@@ -33,14 +33,20 @@ export default function SettingsPage() {
           label="Sound Effects"
           description="Enable keystroke and completion sounds."
           checked={settings.soundEnabled}
-          onChange={(value) => updateSetting('soundEnabled', value)}
+          onChange={(value) => {
+            updateSetting('soundEnabled', value);
+            toast.info(`Sound ${value ? 'enabled' : 'disabled'}`);
+          }}
         />
 
         <SettingToggle
           label="Dark Theme"
           description="Keep dark-first interface styling enabled."
           checked={settings.theme === 'dark'}
-          onChange={(value) => updateSetting('theme', value ? 'dark' : 'light')}
+          onChange={(value) => {
+            updateSetting('theme', value ? 'dark' : 'light');
+            toast.info(`Theme set to ${value ? 'dark' : 'light'}`);
+          }}
         />
 
         <SettingSelect
