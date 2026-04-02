@@ -4,6 +4,7 @@ export const ACHIEVEMENT_DEFINITIONS = [
   { id: 'twenty-five-lessons', label: '25 Lessons Completed', test: (s) => s.completedCount >= 25 },
   { id: 'fifty-lessons', label: '50 Lessons Completed', test: (s) => s.completedCount >= 50 },
   { id: 'hundred-lessons', label: '100 Lessons Completed', test: (s) => s.completedCount >= 100 },
+  { id: 'one-fifty-lessons', label: '150 Lessons Completed', test: (s) => s.completedCount >= 150 },
   { id: 'accuracy-95', label: 'Accuracy Ace', test: (s) => s.averageAccuracy >= 95 },
   { id: 'speed-35', label: 'Speed Burst', test: (s) => s.bestWpm >= 35 }
 ];

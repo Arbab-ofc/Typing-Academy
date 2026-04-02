@@ -51,7 +51,7 @@ export default function LessonsPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <SectionHeader
           eyebrow="Lesson Path"
-          title="100 lessons to build complete typing fluency"
+          title="150 lessons to build complete typing fluency"
           description={
             learningMode === 'unlocked'
               ? 'Unlocked Mode is active. You can start any lesson instantly.'
