@@ -44,10 +44,10 @@ export default function LessonPracticePage() {
       lessonId: numericLessonId,
       lessonTitle: lesson.title,
       ...result,
-      unlockedNextLesson: numericLessonId < 50
+      unlockedNextLesson: result.passed && numericLessonId < 50
     });
 
-    toast.success('Lesson completed and progress saved');
+    toast.success(result.passed ? 'Lesson passed and progress saved' : 'Lesson saved. Retry to unlock next lesson');
     navigate(`/results/${numericLessonId}`);
   };
 

@@ -45,9 +45,13 @@ export default function useTypingAcademy() {
 
   const completeLesson = ({ lessonId, result }) => {
     persist((prev) => {
-      const completedLessons = Array.from(new Set([...prev.completedLessons, lessonId])).sort((a, b) => a - b);
       const nextLesson = Math.min(TOTAL_LESSONS, lessonId + 1);
-      const unlockedLessons = Array.from(new Set([...prev.unlockedLessons, lessonId, nextLesson])).sort((a, b) => a - b);
+      const completedLessons = result.passed
+        ? Array.from(new Set([...prev.completedLessons, lessonId])).sort((a, b) => a - b)
+        : prev.completedLessons;
+      const unlockedLessons = result.passed
+        ? Array.from(new Set([...prev.unlockedLessons, lessonId, nextLesson])).sort((a, b) => a - b)
+        : prev.unlockedLessons;
       const prevStats = prev.lessonStats?.[lessonId] || {};
 
       const lessonStats = {
@@ -73,7 +77,7 @@ export default function useTypingAcademy() {
         ...prev,
         completedLessons,
         unlockedLessons,
-        currentLesson: nextLesson,
+        currentLesson: result.passed ? nextLesson : lessonId,
         lessonStats,
         totalSessions: toNumber(prev.totalSessions) + 1,
         totalPracticeTime: toNumber(prev.totalPracticeTime) + toNumber(result.elapsedSeconds),
