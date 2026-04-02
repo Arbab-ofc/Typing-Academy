@@ -15,7 +15,7 @@ const lessons = [
     description: 'Get comfortable with rhythm, breathing, and steady key presses.',
     category: 'Foundations',
     keysPracticed: 'a s d f j k l ;',
-    content: 'asdf jkl; asdf jkl; keep your eyes forward and type with calm focus.',
+    content: 'asdf jkl; asdf jkl; fjdk sla; asdf jkl; asdf jkl;',
     goal: 'Reach 92% accuracy',
     difficulty: 'Easy',
     tips: 'Type smoothly. Do not rush early lessons.'
@@ -26,7 +26,7 @@ const lessons = [
     description: 'Practice while maintaining neutral posture and wrist alignment.',
     category: 'Foundations',
     keysPracticed: 'home row',
-    content: 'sit tall shoulders relaxed elbows light wrists level and fingers curved.',
+    content: 'stable table cable label enable staple fable',
     goal: 'Finish with fewer than 8 mistakes',
     difficulty: 'Easy',
     tips: 'Feet flat, back supported, wrists not bent.'
@@ -168,7 +168,7 @@ const lessons = [
     description: 'Type simple mixed-row sentences.',
     category: 'Top Row',
     keysPracticed: 'home + top',
-    content: 'we are sure this lesson will improve your pure typing posture.',
+    content: 'we use true words from upper rows in pure typing drills.',
     goal: 'Complete with confidence',
     difficulty: 'Medium'
   },
@@ -178,7 +178,7 @@ const lessons = [
     description: 'Add bottom row center keys C and M.',
     category: 'Bottom Row',
     keysPracticed: 'c m',
-    content: 'calm mimic came comic claim creamy',
+    content: 'mimic came comic claim creamy',
     goal: 'Keep accuracy above 91%',
     difficulty: 'Medium'
   },
@@ -238,7 +238,7 @@ const lessons = [
     description: 'Cycle through alphabet patterns with control.',
     category: 'Bottom Row',
     keysPracticed: 'a-z',
-    content: 'the quick brown fox jumps over a calm and vivid maze.',
+    content: 'the quick brown fox jumps over a vivid maze and back.',
     goal: '94% accuracy target',
     difficulty: 'Hard'
   },
@@ -298,7 +298,7 @@ const lessons = [
     description: 'Switch case fluidly without breaking flow.',
     category: 'Shift & Capitals',
     keysPracticed: 'mixed case',
-    content: 'TypingFeelsBetterWhenYouStayCalm and keep steady breathing.',
+    content: 'TypeWithMixedCaseWords and switch letters with control.',
     goal: 'Complete with balanced speed',
     difficulty: 'Hard'
   },
@@ -378,7 +378,7 @@ const lessons = [
     description: 'Master sentence pacing with period and comma.',
     category: 'Punctuation & Symbols',
     keysPracticed: '. ,',
-    content: 'Practice, pause, and continue. Keep calm, stay focused, type cleanly.',
+    content: 'Practice, pause, and continue. Add commas, then periods, in sequence.',
     goal: 'Accurate punctuation placement',
     difficulty: 'Medium'
   },
@@ -388,7 +388,7 @@ const lessons = [
     description: 'Use shift punctuation confidently.',
     category: 'Punctuation & Symbols',
     keysPracticed: '? !',
-    content: 'Are you ready? Keep going! Is your posture stable? Great!',
+    content: 'Ready now? Type this line! Repeat again? Great speed!',
     goal: 'Maintain flow while using shift symbols',
     difficulty: 'Hard'
   },
@@ -408,7 +408,7 @@ const lessons = [
     description: 'Practice common symbols used in coding and writing.',
     category: 'Punctuation & Symbols',
     keysPracticed: '@ # $ % & * ( )',
-    content: 'email@site.com costs $20 & tax. Score #1 with 95% focus.',
+    content: 'email@site.com costs $20 & tax. Rank #1 with clean output.',
     goal: 'Correct symbol entry with shift pairing',
     difficulty: 'Hard'
   },
@@ -418,7 +418,7 @@ const lessons = [
     description: 'Blend punctuation naturally in sentence flow.',
     category: 'Punctuation & Symbols',
     keysPracticed: 'mixed punctuation',
-    content: 'Wait, what happened? We improved fast; now keep it consistent!',
+    content: 'Wait, what happened? Type this again; keep marks consistent!',
     goal: 'Fewer than 10 mistakes',
     difficulty: 'Hard'
   },
@@ -428,7 +428,7 @@ const lessons = [
     description: 'Type polished sentences with clean punctuation.',
     category: 'Punctuation & Symbols',
     keysPracticed: 'full punctuation set',
-    content: 'Typing is a craft: practice daily, review errors, and celebrate progress.',
+    content: 'Typing line one: comma, colon, semicolon; quote marks and apostrophe.',
     goal: '95%+ accuracy',
     difficulty: 'Hard'
   },
@@ -448,7 +448,7 @@ const lessons = [
     description: 'Type fluent high-frequency sentence structures.',
     category: 'Real-world Mastery',
     keysPracticed: 'sentences',
-    content: 'I will improve a little every day and keep my typing calm and accurate.',
+    content: 'I write common lines each day and keep typing accurate and clear.',
     goal: 'Maintain 94% accuracy',
     difficulty: 'Hard'
   },
@@ -458,7 +458,7 @@ const lessons = [
     description: 'Type your first full paragraph at a steady pace.',
     category: 'Real-world Mastery',
     keysPracticed: 'paragraph flow',
-    content: 'Typing well is not about rushing. It is about control, rhythm, and deliberate movement. When your posture is correct and your focus is steady, speed arrives naturally with practice.',
+    content: 'Typing paragraph one uses plain words and mixed punctuation. This passage trains rhythm across short and long words while maintaining correct spacing and sentence flow.',
     goal: 'Complete paragraph with fewer than 18 mistakes',
     difficulty: 'Hard'
   },
@@ -468,7 +468,7 @@ const lessons = [
     description: 'Longer passage for endurance and consistency.',
     category: 'Real-world Mastery',
     keysPracticed: 'paragraph flow',
-    content: 'Consistent practice creates confidence. Confident typists keep their eyes on the screen, trust their fingers, and review mistakes without frustration. Progress is built one focused session at a time.',
+    content: 'Typing paragraph two expands sentence length and key variety. Continue with even pace, proper spacing, and consistent punctuation across every typed segment.',
     goal: 'Sustain accuracy above 93%',
     difficulty: 'Hard'
   },
@@ -478,7 +478,7 @@ const lessons = [
     description: 'Prioritize precision over speed in a controlled test.',
     category: 'Real-world Mastery',
     keysPracticed: 'all keys',
-    content: 'Slow down and type each character exactly as shown. Precision now builds speed later.',
+    content: 'Type each character exactly as shown and keep every word unchanged.',
     goal: '97%+ accuracy required',
     difficulty: 'Hard'
   },
@@ -488,7 +488,7 @@ const lessons = [
     description: 'Push for higher words per minute with discipline.',
     category: 'Real-world Mastery',
     keysPracticed: 'all keys',
-    content: 'Maintain posture, breathe lightly, and increase pace without losing control of each line.',
+    content: 'Increase pace across each line without dropping letters or punctuation.',
     goal: 'Reach 30+ WPM',
     difficulty: 'Hard'
   },
@@ -498,7 +498,7 @@ const lessons = [
     description: 'Comprehensive assessment before mastery.',
     category: 'Real-world Mastery',
     keysPracticed: 'all keys',
-    content: 'Today you combine letters, numbers, and punctuation in one structured test. Stay calm, trust your training, and type with intention.',
+    content: 'Combine letters, numbers, and punctuation in one structured test line.',
     goal: 'Complete test with balanced speed and accuracy',
     difficulty: 'Expert'
   },
@@ -508,10 +508,10 @@ const lessons = [
     description: 'Graduate from guided drills to confident, independent typing.',
     category: 'Real-world Mastery',
     keysPracticed: 'all keys',
-    content: 'Master typists do not panic when mistakes happen. They recover quickly, stay composed, and finish strong. You are now ready to type efficiently in real work every day.',
+    content: 'Final mastery test includes long words, symbols, numbers, and punctuation to confirm complete keyboard control in practical typing tasks.',
     goal: 'Graduate with 95% accuracy and confidence',
     difficulty: 'Expert',
-    tips: 'Celebrate progress, then keep practicing for consistency.'
+    tips: 'Practice regularly to maintain consistency.'
   }
 ];
 
