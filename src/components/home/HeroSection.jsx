@@ -21,21 +21,21 @@ export default function HeroSection({ currentLessonId }) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/lessons"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-5 py-3 text-sm font-bold text-ink-950 transition hover:brightness-110"
+              className="focus-ring inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-5 py-3 text-sm font-bold text-ink-950 transition hover:brightness-110"
             >
               Start Learning
               <FiArrowRight />
             </Link>
             <Link
               to={`/lessons/${currentLessonId}`}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="focus-ring inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               <FiPlayCircle />
               Continue Lesson
             </Link>
             <Link
               to="/dashboard"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-ocean-400/60 hover:text-white"
+              className="focus-ring inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-ocean-400/60 hover:text-white"
             >
               <FiBarChart2 />
               View Progress

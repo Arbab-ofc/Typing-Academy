@@ -46,7 +46,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="inline-flex rounded-lg border border-white/10 p-2 text-slate-100 md:hidden"
+          className="focus-ring inline-flex rounded-lg border border-white/10 p-2 text-slate-100 md:hidden"
           aria-label="Toggle navigation"
         >
           {isOpen ? <FiX /> : <FiMenu />}
