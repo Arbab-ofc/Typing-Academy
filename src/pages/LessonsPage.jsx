@@ -66,7 +66,7 @@ export default function LessonsPage() {
   );
 
   return (
-    <div className="space-y-6 sm:space-y-8">
+    <div className="space-y-5 sm:space-y-7">
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <SectionHeader
           eyebrow="Lesson Path"
@@ -79,7 +79,7 @@ export default function LessonsPage() {
           rightSlot={
             <Link
               to={`/lessons/${progress.currentLesson}`}
-              className="inline-flex rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-4 py-2 text-sm font-semibold text-ink-950"
+              className="inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-ocean-500 to-mint-500 px-4 py-2 text-sm font-semibold text-ink-950 sm:w-auto"
             >
               Resume Current Lesson
             </Link>
@@ -94,30 +94,32 @@ export default function LessonsPage() {
           <CategoryFilterChips categories={LESSON_CATEGORIES} activeCategory={activeCategory} onChange={setActiveCategory} />
           <LessonSearch query={query} onChange={setQuery} />
         </div>
-        <div className="mt-4 max-w-xs">
-          <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Sort</label>
-          <select
-            value={sortBy}
-            onChange={(event) => setSortBy(event.target.value)}
-            className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
-          >
-            <option value="id-asc">Lesson Number (Ascending)</option>
-            <option value="id-desc">Lesson Number (Descending)</option>
-            <option value="difficulty">Difficulty</option>
-          </select>
-        </div>
-        <div className="mt-4 max-w-xs">
-          <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Per Page</label>
-          <select
-            value={pageSize}
-            onChange={(event) => setPageSize(Number(event.target.value))}
-            className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
-          >
-            <option value={9}>9 lessons</option>
-            <option value={12}>12 lessons</option>
-            <option value={15}>15 lessons</option>
-            <option value={18}>18 lessons</option>
-          </select>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Sort</label>
+            <select
+              value={sortBy}
+              onChange={(event) => setSortBy(event.target.value)}
+              className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
+            >
+              <option value="id-asc">Lesson Number (Ascending)</option>
+              <option value="id-desc">Lesson Number (Descending)</option>
+              <option value="difficulty">Difficulty</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Per Page</label>
+            <select
+              value={pageSize}
+              onChange={(event) => setPageSize(Number(event.target.value))}
+              className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
+            >
+              <option value={9}>9 lessons</option>
+              <option value={12}>12 lessons</option>
+              <option value={15}>15 lessons</option>
+              <option value={18}>18 lessons</option>
+            </select>
+          </div>
         </div>
       </section>
 
@@ -156,18 +158,18 @@ export default function LessonsPage() {
 
       {displayedLessons.length ? (
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-slate-300">
               Page <span className="font-semibold text-white">{currentPage}</span> of{' '}
               <span className="font-semibold text-white">{totalPages}</span>
             </p>
-            <p className="text-xs uppercase tracking-[0.12em] text-slate-400">
+            <p className="text-xs text-slate-400 sm:text-xs sm:uppercase sm:tracking-[0.12em]">
               Showing {Math.min((currentPage - 1) * pageSize + 1, displayedLessons.length)}-
               {Math.min(currentPage * pageSize, displayedLessons.length)} of {displayedLessons.length}
             </p>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
             <button
               type="button"
               onClick={() => setCurrentPage(1)}

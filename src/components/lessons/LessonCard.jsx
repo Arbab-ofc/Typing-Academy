@@ -14,7 +14,7 @@ export default function LessonCard({ lesson, status }) {
 
   return (
     <article
-      className={`group rounded-2xl border p-5 shadow-panel transition ${
+      className={`group rounded-2xl border p-4 shadow-panel transition sm:p-5 ${
         isLocked
           ? 'border-white/10 bg-white/[0.02] opacity-80'
           : status === 'completed'
@@ -24,10 +24,10 @@ export default function LessonCard({ lesson, status }) {
               : 'border-white/10 bg-white/5 hover:-translate-y-1 hover:bg-white/[0.08]'
       }`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Lesson {lesson.id}</p>
-          <h3 className="mt-2 font-display text-xl font-semibold text-white">{lesson.title}</h3>
+          <h3 className="mt-2 line-clamp-2 font-display text-lg font-semibold text-white sm:text-xl">{lesson.title}</h3>
         </div>
         <LessonStatusBadge status={status} />
       </div>
@@ -45,7 +45,7 @@ export default function LessonCard({ lesson, status }) {
         </div>
         <div className="col-span-2 rounded-lg bg-white/5 p-2">
           <dt className="text-slate-400">Keys</dt>
-          <dd className="mt-1 font-mono text-slate-100">{lesson.keysPracticed}</dd>
+          <dd className="mt-1 break-words font-mono text-slate-100">{lesson.keysPracticed}</dd>
         </div>
       </dl>
 

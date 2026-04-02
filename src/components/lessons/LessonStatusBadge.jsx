@@ -28,7 +28,7 @@ export default function LessonStatusBadge({ status }) {
   const Icon = meta.icon;
 
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold ${meta.className}`}>
+    <span className={`inline-flex w-fit shrink-0 items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold ${meta.className}`}>
       <Icon size={12} />
       {meta.label}
     </span>
