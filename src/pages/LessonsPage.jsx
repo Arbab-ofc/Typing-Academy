@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LESSONS, LESSON_CATEGORIES } from '../data/lessons';
 import { useAcademyContext } from '../hooks/useAcademyContext';
@@ -14,6 +14,8 @@ export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState('id-asc');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(12);
   const { progress, progressSummary, settings } = useAcademyContext();
   const learningMode = settings.learningMode || 'mission';
 
@@ -36,6 +38,23 @@ export default function LessonsPage() {
     }
     return items;
   }, [filteredLessons, sortBy]);
+
+  const totalPages = Math.max(1, Math.ceil(displayedLessons.length / pageSize));
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, query, sortBy, pageSize]);
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
+
+  const paginatedLessons = useMemo(() => {
+    const startIndex = (currentPage - 1) * pageSize;
+    return displayedLessons.slice(startIndex, startIndex + pageSize);
+  }, [displayedLessons, currentPage, pageSize]);
 
   const statusCounts = useMemo(
     () => ({
@@ -87,6 +106,19 @@ export default function LessonsPage() {
             <option value="difficulty">Difficulty</option>
           </select>
         </div>
+        <div className="mt-4 max-w-xs">
+          <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Per Page</label>
+          <select
+            value={pageSize}
+            onChange={(event) => setPageSize(Number(event.target.value))}
+            className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
+          >
+            <option value={9}>9 lessons</option>
+            <option value={12}>12 lessons</option>
+            <option value={15}>15 lessons</option>
+            <option value={18}>18 lessons</option>
+          </select>
+        </div>
       </section>
 
       <section className="rounded-2xl border border-ocean-500/30 bg-ocean-500/10 p-4">
@@ -111,8 +143,8 @@ export default function LessonsPage() {
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {displayedLessons.length ? (
-          displayedLessons.map((lesson) => (
+        {paginatedLessons.length ? (
+          paginatedLessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress, learningMode)} />
           ))
         ) : (
@@ -121,6 +153,56 @@ export default function LessonsPage() {
           </div>
         )}
       </section>
+
+      {displayedLessons.length ? (
+        <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-slate-300">
+              Page <span className="font-semibold text-white">{currentPage}</span> of{' '}
+              <span className="font-semibold text-white">{totalPages}</span>
+            </p>
+            <p className="text-xs uppercase tracking-[0.12em] text-slate-400">
+              Showing {Math.min((currentPage - 1) * pageSize + 1, displayedLessons.length)}-
+              {Math.min(currentPage * pageSize, displayedLessons.length)} of {displayedLessons.length}
+            </p>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+              className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              First
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Previous
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+              disabled={currentPage === totalPages}
+              className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Next
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={currentPage === totalPages}
+              className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Last
+            </button>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

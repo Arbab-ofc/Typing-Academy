@@ -4,23 +4,31 @@ export default function MobileMenu({ isOpen, links, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="border-t border-white/10 bg-ink-900 px-4 py-3 md:hidden">
-      <nav className="flex flex-col gap-2">
-        {links.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            onClick={onClose}
-            className={({ isActive }) =>
-              `rounded-lg px-3 py-2 text-sm font-semibold ${
-                isActive ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/5 hover:text-white'
-              }`
-            }
-          >
-            {item.label}
-          </NavLink>
-        ))}
-      </nav>
+    <div className="px-4 pb-4 pt-2 md:hidden">
+      <div className="overflow-hidden rounded-2xl border border-white/15 bg-ink-900/95 shadow-panel backdrop-blur">
+        <div className="border-b border-white/10 px-4 py-3">
+          <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Menu</p>
+        </div>
+
+        <nav className="grid gap-1 p-2">
+          {links.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              onClick={onClose}
+              className={({ isActive }) =>
+                `rounded-xl px-4 py-3 text-sm font-semibold transition ${
+                  isActive
+                    ? 'bg-gradient-to-r from-ocean-500/30 to-mint-500/30 text-white'
+                    : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }
