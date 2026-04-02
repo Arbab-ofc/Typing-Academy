@@ -13,10 +13,10 @@ const KEYBOARD_ROWS = [
     { label: '0', value: '0' },
     { label: '-', value: '-' },
     { label: '=', value: '=' },
-    { label: 'Backspace', value: 'BACKSPACE', width: 'min-w-[5rem]' }
+    { label: 'Backspace', value: 'BACKSPACE', width: 'min-w-[6.2rem]' }
   ],
   [
-    { label: 'Tab', value: 'TAB', width: 'min-w-[3.5rem]' },
+    { label: 'Tab', value: 'TAB', width: 'min-w-[4.2rem]' },
     { label: 'Q', value: 'Q' },
     { label: 'W', value: 'W' },
     { label: 'E', value: 'E' },
@@ -29,10 +29,10 @@ const KEYBOARD_ROWS = [
     { label: 'P', value: 'P' },
     { label: '[', value: '[' },
     { label: ']', value: ']' },
-    { label: '\\', value: '\\', width: 'min-w-[3.2rem]' }
+    { label: '\\', value: '\\', width: 'min-w-[4rem]' }
   ],
   [
-    { label: 'Caps', value: 'CAPSLOCK', width: 'min-w-[4.4rem]' },
+    { label: 'Caps', value: 'CAPSLOCK', width: 'min-w-[5.2rem]' },
     { label: 'A', value: 'A' },
     { label: 'S', value: 'S' },
     { label: 'D', value: 'D' },
@@ -44,10 +44,10 @@ const KEYBOARD_ROWS = [
     { label: 'L', value: 'L' },
     { label: ';', value: ';' },
     { label: "'", value: "'" },
-    { label: 'Enter', value: 'ENTER', width: 'min-w-[4.6rem]' }
+    { label: 'Enter', value: 'ENTER', width: 'min-w-[5.6rem]' }
   ],
   [
-    { label: 'Shift', value: 'SHIFT', width: 'min-w-[5.4rem]' },
+    { label: 'Shift', value: 'SHIFT', width: 'min-w-[6.4rem]' },
     { label: 'Z', value: 'Z' },
     { label: 'X', value: 'X' },
     { label: 'C', value: 'C' },
@@ -58,16 +58,16 @@ const KEYBOARD_ROWS = [
     { label: ',', value: ',' },
     { label: '.', value: '.' },
     { label: '/', value: '/' },
-    { label: 'Shift', value: 'SHIFT', width: 'min-w-[5.4rem]' }
+    { label: 'Shift', value: 'SHIFT', width: 'min-w-[6.4rem]' }
   ],
   [
-    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3rem]' },
-    { label: 'Win', value: 'META', width: 'min-w-[3rem]' },
-    { label: 'Alt', value: 'ALT', width: 'min-w-[3rem]' },
-    { label: 'Space', value: 'SPACE', width: 'min-w-[14rem]' },
-    { label: 'Alt', value: 'ALT', width: 'min-w-[3rem]' },
-    { label: 'Fn', value: 'FN', width: 'min-w-[3rem]' },
-    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3rem]' }
+    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3.8rem]' },
+    { label: 'Win', value: 'META', width: 'min-w-[3.8rem]' },
+    { label: 'Alt', value: 'ALT', width: 'min-w-[3.8rem]' },
+    { label: 'Space', value: 'SPACE', width: 'min-w-[18rem]' },
+    { label: 'Alt', value: 'ALT', width: 'min-w-[3.8rem]' },
+    { label: 'Fn', value: 'FN', width: 'min-w-[3.8rem]' },
+    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3.8rem]' }
   ]
 ];
 
@@ -122,8 +122,8 @@ export default function KeyboardGuide({ keysPracticed }) {
               return (
                 <span
                   key={`${key.label}-${key.value}-${rowIndex}`}
-                  className={`inline-flex h-8 min-w-8 items-center justify-center rounded-md border px-2 text-xs font-semibold ${
-                    key.width || 'min-w-8'
+                  className={`inline-flex h-10 min-w-10 items-center justify-center rounded-md border px-3 text-sm font-semibold ${
+                    key.width || 'min-w-10'
                   } ${
                     active
                       ? 'border-ocean-500/60 bg-ocean-500/25 text-ocean-100'
