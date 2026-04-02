@@ -17,6 +17,19 @@ body {
 
 :root[data-theme='light'] {
   color-scheme: light;
+  --theme-text-strong: rgb(15 23 42);
+  --theme-text-primary: rgb(30 41 59);
+  --theme-text-secondary: rgb(51 65 85);
+  --theme-text-muted: rgb(100 116 139);
+  --theme-surface-base: rgb(248 250 252 / 0.95);
+  --theme-surface-soft: rgb(15 23 42 / 0.05);
+  --theme-surface-soft-2: rgb(15 23 42 / 0.08);
+  --theme-border-soft: rgb(15 23 42 / 0.14);
+  --theme-border-mid: rgb(15 23 42 / 0.22);
+  --theme-ocean-text: rgb(3 105 161);
+  --theme-mint-text: rgb(5 150 105);
+  --theme-warn-text: rgb(180 83 9);
+  --theme-danger-text: rgb(190 24 93);
 }
 
 :root[data-theme='light'] body {
@@ -26,108 +39,179 @@ body {
     radial-gradient(circle at 90% 80%, rgba(38, 197, 155, 0.1), transparent 35%);
 }
 
-/* Light-mode contrast overrides for dark-first utility classes used across the app */
+/* Rebuilt light theme mapping for dark-first utility usage */
 :root[data-theme='light'] .text-white {
-  color: rgb(15 23 42) !important;
+  color: var(--theme-text-strong);
 }
 
 :root[data-theme='light'] .text-slate-100 {
-  color: rgb(30 41 59) !important;
+  color: var(--theme-text-primary);
 }
 
 :root[data-theme='light'] .text-slate-200 {
-  color: rgb(51 65 85) !important;
+  color: var(--theme-text-secondary);
 }
 
 :root[data-theme='light'] .text-slate-300 {
-  color: rgb(71 85 105) !important;
+  color: var(--theme-text-secondary);
 }
 
 :root[data-theme='light'] .text-slate-400 {
-  color: rgb(100 116 139) !important;
+  color: var(--theme-text-muted);
+}
+
+:root[data-theme='light'] .text-slate-500 {
+  color: var(--theme-text-muted);
 }
 
 :root[data-theme='light'] .bg-ink-950,
 :root[data-theme='light'] .bg-ink-900,
+:root[data-theme='light'] .bg-ink-800,
 :root[data-theme='light'] .bg-ink-900\/70,
 :root[data-theme='light'] .bg-ink-900\/60,
 :root[data-theme='light'] .bg-ink-950\/80 {
-  background-color: rgba(248, 250, 252, 0.95) !important;
+  background-color: var(--theme-surface-base);
 }
 
 :root[data-theme='light'] .bg-white\/5,
 :root[data-theme='light'] .bg-white\/10,
+:root[data-theme='light'] .bg-white\/20,
+:root[data-theme='light'] .bg-white\/\[0\.02\],
 :root[data-theme='light'] .bg-white\/\[0\.03\],
 :root[data-theme='light'] .bg-white\/\[0\.08\] {
-  background-color: rgba(15, 23, 42, 0.05) !important;
+  background-color: var(--theme-surface-soft);
+}
+
+:root[data-theme='light'] .bg-white\/20,
+:root[data-theme='light'] .bg-white\/\[0\.08\] {
+  background-color: var(--theme-surface-soft-2);
 }
 
 :root[data-theme='light'] .from-ink-900 {
-  --tw-gradient-from: #f1f5f9 var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgb(241 245 249 / 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  --tw-gradient-from: #f1f5f9 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(241 245 249 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 :root[data-theme='light'] .via-ink-900 {
-  --tw-gradient-to: rgb(241 245 249 / 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), #e2e8f0 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  --tw-gradient-to: rgb(241 245 249 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #e2e8f0 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 :root[data-theme='light'] .to-ink-800 {
-  --tw-gradient-to: #dbeafe var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: #dbeafe var(--tw-gradient-to-position);
+}
+
+:root[data-theme='light'] .from-ocean-500\/10 {
+  --tw-gradient-from: rgb(3 105 161 / 0.14) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(3 105 161 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+:root[data-theme='light'] .to-mint-500\/10 {
+  --tw-gradient-to: rgb(5 150 105 / 0.14) var(--tw-gradient-to-position);
 }
 
 :root[data-theme='light'] .text-ocean-300,
 :root[data-theme='light'] .text-ocean-400,
 :root[data-theme='light'] .text-ocean-500 {
-  color: rgb(3 105 161) !important;
+  color: var(--theme-ocean-text);
+}
+
+:root[data-theme='light'] .text-ocean-100 {
+  color: rgb(7 89 133);
 }
 
 :root[data-theme='light'] .text-mint-200,
 :root[data-theme='light'] .text-mint-300 {
-  color: rgb(5 150 105) !important;
+  color: var(--theme-mint-text);
 }
 
+:root[data-theme='light'] .text-amber-300 {
+  color: var(--theme-warn-text);
+}
+
+:root[data-theme='light'] .text-rose-200,
+:root[data-theme='light'] .text-rose-300 {
+  color: var(--theme-danger-text);
+}
+
+:root[data-theme='light'] .border-white,
 :root[data-theme='light'] .border-ocean-500\/30,
 :root[data-theme='light'] .border-ocean-500\/35,
-:root[data-theme='light'] .border-ocean-500\/40 {
-  border-color: rgba(3, 105, 161, 0.35) !important;
+:root[data-theme='light'] .border-ocean-500\/40,
+:root[data-theme='light'] .border-ocean-500\/60,
+:root[data-theme='light'] .border-ocean-400\/60,
+:root[data-theme='light'] .border-ocean-500 {
+  border-color: rgb(3 105 161 / 0.35);
 }
 
 :root[data-theme='light'] .border-mint-500\/30,
-:root[data-theme='light'] .border-mint-500\/40 {
-  border-color: rgba(5, 150, 105, 0.35) !important;
+:root[data-theme='light'] .border-mint-500\/40,
+:root[data-theme='light'] .border-mint-500 {
+  border-color: rgb(5 150 105 / 0.35);
+}
+
+:root[data-theme='light'] .border-rose-400\/40 {
+  border-color: rgb(190 24 93 / 0.35);
 }
 
 :root[data-theme='light'] .bg-ocean-500\/10,
 :root[data-theme='light'] .bg-ocean-500\/15,
-:root[data-theme='light'] .bg-ocean-500\/25 {
-  background-color: rgba(3, 105, 161, 0.12) !important;
+:root[data-theme='light'] .bg-ocean-500\/20,
+:root[data-theme='light'] .bg-ocean-500\/25,
+:root[data-theme='light'] .bg-ocean-500\/40,
+:root[data-theme='light'] .bg-ocean-500\/\[0\.08\] {
+  background-color: rgb(3 105 161 / 0.12);
 }
 
 :root[data-theme='light'] .bg-mint-500\/10,
-:root[data-theme='light'] .bg-mint-500\/15 {
-  background-color: rgba(5, 150, 105, 0.12) !important;
+:root[data-theme='light'] .bg-mint-500\/15,
+:root[data-theme='light'] .bg-mint-500\/20,
+:root[data-theme='light'] .bg-mint-500\/\[0\.06\] {
+  background-color: rgb(5 150 105 / 0.12);
+}
+
+:root[data-theme='light'] .bg-rose-500\/10,
+:root[data-theme='light'] .bg-rose-500\/20 {
+  background-color: rgb(190 24 93 / 0.12);
 }
 
 :root[data-theme='light'] .border-white\/10 {
-  border-color: rgba(15, 23, 42, 0.14) !important;
+  border-color: var(--theme-border-soft);
 }
 
 :root[data-theme='light'] .border-white\/15 {
-  border-color: rgba(15, 23, 42, 0.18) !important;
+  border-color: rgb(15 23 42 / 0.18);
 }
 
 :root[data-theme='light'] .border-white\/20 {
-  border-color: rgba(15, 23, 42, 0.22) !important;
+  border-color: var(--theme-border-mid);
 }
 
 :root[data-theme='light'] .hover\:bg-white\/10:hover {
-  background-color: rgba(15, 23, 42, 0.1) !important;
+  background-color: rgb(15 23 42 / 0.1);
 }
 
 :root[data-theme='light'] .hover\:bg-white\/5:hover {
-  background-color: rgba(15, 23, 42, 0.08) !important;
+  background-color: rgb(15 23 42 / 0.08);
+}
+
+:root[data-theme='light'] .hover\:bg-white\/20:hover,
+:root[data-theme='light'] .hover\:bg-white\/\[0\.08\]:hover {
+  background-color: rgb(15 23 42 / 0.12);
+}
+
+:root[data-theme='light'] .hover\:text-white:hover {
+  color: var(--theme-text-strong);
+}
+
+:root[data-theme='light'] .hover\:border-ocean-400\/60:hover {
+  border-color: rgb(3 105 161 / 0.5);
+}
+
+:root[data-theme='light'] .shadow-panel {
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.1);
 }
 
 :root[data-theme='light'] .backdrop-blur-xl {
