@@ -10,16 +10,7 @@ const panelClassMap = {
   spacious: 'space-y-6 p-6 sm:p-8'
 };
 
-export default function TypingPanel({
-  lesson,
-  session,
-  onComplete,
-  textSize = 'md',
-  panelSize = 'comfortable',
-  language = 'english',
-  transliterationEnabled = false,
-  transliterationRequested = false
-}) {
+export default function TypingPanel({ lesson, session, onComplete, textSize = 'md', panelSize = 'comfortable' }) {
   const {
     typedText,
     elapsedSeconds,
@@ -52,22 +43,9 @@ export default function TypingPanel({
       ) : null}
 
       <TypingText targetText={lesson.content} typedText={typedText} activeIndex={activeIndex} textSize={textSize} />
-      <TypingInput
-        value={typedText}
-        onChange={onTextChange}
-        disabled={isComplete}
-        transliterationHint={
-          language === 'hindi'
-            ? transliterationEnabled
-              ? 'Hindi transliteration is on: type English letters to generate Hindi script.'
-              : transliterationRequested
-                ? 'This lesson uses physical key drills (asdf-style), so transliteration is paused for accurate key-position practice.'
-                : 'Hindi transliteration is off: use your Hindi keyboard layout for real key-position practice.'
-            : ''
-        }
-      />
+      <TypingInput value={typedText} onChange={onTextChange} disabled={isComplete} />
 
-      <KeyboardGuide keysPracticed={lesson.keysPracticed} language={language} />
+      <KeyboardGuide keysPracticed={lesson.keysPracticed} />
 
       <div className="flex flex-wrap gap-3">
         <button

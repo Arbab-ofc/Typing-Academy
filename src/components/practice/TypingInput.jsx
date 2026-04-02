@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function TypingInput({ value, onChange, disabled, transliterationHint }) {
+export default function TypingInput({ value, onChange, disabled }) {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export default function TypingInput({ value, onChange, disabled, transliteration
       />
       <p id="typing-input-help" className="mt-2 text-xs text-slate-400">
         Timer starts on your first keypress. Backspace is supported.
-        {transliterationHint ? ` ${transliterationHint}` : ''}
       </p>
     </div>
   );

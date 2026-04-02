@@ -10,32 +10,16 @@ export const DEFAULT_SETTINGS = {
   soundEnabled: false,
   theme: 'dark',
   textSize: 'md',
-  panelSize: 'comfortable',
-  hindiTransliterationEnabled: false
+  panelSize: 'comfortable'
 };
 
 export const INITIAL_PROGRESS = {
-  activeLanguage: 'english',
-  languages: {
-    english: {
-      completedLessons: [],
-      unlockedLessons: [1],
-      currentLesson: 1,
-      lessonStats: {},
-      totalSessions: 0,
-      totalPracticeTime: 0,
-      history: [],
-      achievements: []
-    },
-    hindi: {
-      completedLessons: [],
-      unlockedLessons: [1],
-      currentLesson: 1,
-      lessonStats: {},
-      totalSessions: 0,
-      totalPracticeTime: 0,
-      history: [],
-      achievements: []
-    }
-  }
+  completedLessons: [],
+  unlockedLessons: [1],
+  currentLesson: 1,
+  lessonStats: {},
+  totalSessions: 0,
+  totalPracticeTime: 0,
+  history: [],
+  achievements: []
 };

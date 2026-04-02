@@ -7,8 +7,7 @@ import { useAcademyContext } from '../hooks/useAcademyContext';
 import { clearProgressData } from '../utils/storage';
 
 export default function SettingsPage() {
-  const { settings, updateSetting, resetProgress, activeLanguage, setActiveLanguage, availableLanguages } =
-    useAcademyContext();
+  const { settings, updateSetting, resetProgress } = useAcademyContext();
 
   const handleReset = () => {
     const confirmed = window.confirm('Reset all progress, history, and achievements?');
@@ -30,16 +29,6 @@ export default function SettingsPage() {
       </section>
 
       <SettingsPanel title="Preferences" description="Adjust behavior and readability.">
-        <SettingSelect
-          label="Lesson Language"
-          value={activeLanguage}
-          onChange={(value) => {
-            setActiveLanguage(value);
-            toast.info(`Language set to ${value === 'hindi' ? 'Hindi' : 'English'}`);
-          }}
-          options={availableLanguages.map((item) => ({ label: item.label, value: item.id }))}
-        />
-
         <SettingToggle
           label="Sound Effects"
           description="Enable keystroke and completion sounds."
@@ -57,16 +46,6 @@ export default function SettingsPage() {
           onChange={(value) => {
             updateSetting('theme', value ? 'dark' : 'light');
             toast.info(`Theme set to ${value ? 'dark' : 'light'}`);
-          }}
-        />
-
-        <SettingToggle
-          label="Hindi Transliteration"
-          description="Type English letters and auto-convert to Hindi in Hindi lessons."
-          checked={settings.hindiTransliterationEnabled}
-          onChange={(value) => {
-            updateSetting('hindiTransliterationEnabled', value);
-            toast.info(`Hindi transliteration ${value ? 'enabled' : 'disabled'}`);
           }}
         />
 

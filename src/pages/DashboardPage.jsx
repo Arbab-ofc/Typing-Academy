@@ -10,9 +10,8 @@ import { TOTAL_LESSONS } from '../utils/constants';
 import { formatDuration } from '../utils/typing';
 
 export default function DashboardPage() {
-  const { progress, progressSummary, activeLanguage } = useAcademyContext();
-  const languageHistory = progress.history.filter((entry) => entry.language === activeLanguage);
-  const bestSession = [...languageHistory].sort((a, b) => b.wpm - a.wpm)[0];
+  const { progress, progressSummary } = useAcademyContext();
+  const bestSession = [...progress.history].sort((a, b) => b.wpm - a.wpm)[0];
 
   const averageSessionTime = progress.totalSessions
     ? Math.round(progress.totalPracticeTime / progress.totalSessions)
@@ -73,7 +72,7 @@ export default function DashboardPage() {
         <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
           <h2 className="font-display text-xl font-semibold text-white">Recent Activity</h2>
           <div className="mt-4">
-            <RecentActivityList history={languageHistory.slice(0, 8)} />
+            <RecentActivityList history={progress.history.slice(0, 8)} />
           </div>
         </div>
       </section>
@@ -92,7 +91,7 @@ export default function DashboardPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5">
         <h2 className="font-display text-xl font-semibold text-white">Lesson-wise Stats</h2>
         <div className="mt-4">
-          <LessonStatsTable lessonStats={progress.lessonStats} language={activeLanguage} />
+          <LessonStatsTable lessonStats={progress.lessonStats} />
         </div>
       </section>
     </div>

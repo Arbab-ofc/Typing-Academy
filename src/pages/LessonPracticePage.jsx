@@ -3,28 +3,23 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SectionHeader from '../components/common/SectionHeader';
 import TypingPanel from '../components/practice/TypingPanel';
-import { getLessonByLanguageAndId } from '../data/courseData';
+import { getLessonById } from '../data/lessons';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import useTypingSession from '../hooks/useTypingSession';
 import { saveRecentResult } from '../utils/storage';
-import { transliterateToHindi } from '../utils/transliteration';
 
 export default function LessonPracticePage() {
   const { lessonId } = useParams();
   const navigate = useNavigate();
-  const { progress, completeLesson, settings, activeLanguage } = useAcademyContext();
-  const lesson = getLessonByLanguageAndId(activeLanguage, lessonId);
+  const { progress, completeLesson, settings } = useAcademyContext();
+  const lesson = getLessonById(lessonId);
 
   const numericLessonId = Number(lessonId);
   const isUnlocked = progress.unlockedLessons.includes(numericLessonId);
-  const hasHindiScriptTarget = /[\u0900-\u097F]/.test(lesson?.content ?? '');
-  const transliterationActive =
-    activeLanguage === 'hindi' && settings.hindiTransliterationEnabled && hasHindiScriptTarget;
 
   const session = useTypingSession({
     lessonId: numericLessonId,
-    targetText: lesson?.content ?? '',
-    inputTransformer: transliterationActive ? transliterateToHindi : undefined
+    targetText: lesson?.content ?? ''
   });
 
   const nextLessonId = useMemo(() => Math.min(50, numericLessonId + 1), [numericLessonId]);
@@ -49,8 +44,7 @@ export default function LessonPracticePage() {
       lessonId: numericLessonId,
       lessonTitle: lesson.title,
       ...result,
-      unlockedNextLesson: result.passed && numericLessonId < 50,
-      language: activeLanguage
+      unlockedNextLesson: result.passed && numericLessonId < 50
     });
 
     toast.success(result.passed ? 'Lesson passed and progress saved' : 'Lesson saved. Retry to unlock next lesson');
@@ -96,9 +90,6 @@ export default function LessonPracticePage() {
         onComplete={handleComplete}
         textSize={settings.textSize}
         panelSize={settings.panelSize}
-        language={activeLanguage}
-        transliterationEnabled={transliterationActive}
-        transliterationRequested={activeLanguage === 'hindi' && settings.hindiTransliterationEnabled}
       />
     </div>
   );

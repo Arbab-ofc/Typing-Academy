@@ -2,64 +2,14 @@ import { useMemo, useState } from 'react';
 import { TOTAL_LESSONS } from '../utils/constants';
 import { deriveAchievements } from '../utils/achievements';
 import { loadProgress, saveProgress } from '../utils/storage';
-import { LANGUAGE_OPTIONS } from '../data/courseData';
 
 function toNumber(value, fallback = 0) {
   const next = Number(value);
   return Number.isFinite(next) ? next : fallback;
 }
 
-function createLanguageProgress() {
-  return {
-    completedLessons: [],
-    unlockedLessons: [1],
-    currentLesson: 1,
-    lessonStats: {},
-    totalSessions: 0,
-    totalPracticeTime: 0,
-    history: [],
-    achievements: []
-  };
-}
-
-function normalizeProgress(raw) {
-  const base = {
-    activeLanguage: 'english',
-    languages: {
-      english: createLanguageProgress(),
-      hindi: createLanguageProgress()
-    }
-  };
-
-  if (!raw || typeof raw !== 'object') return base;
-
-  if (raw.languages && typeof raw.languages === 'object') {
-    return {
-      ...base,
-      ...raw,
-      languages: {
-        english: { ...base.languages.english, ...(raw.languages.english || {}) },
-        hindi: { ...base.languages.hindi, ...(raw.languages.hindi || {}) }
-      }
-    };
-  }
-
-  // Legacy migration: treat existing shape as English progress.
-  return {
-    ...base,
-    activeLanguage: 'english',
-    languages: {
-      ...base.languages,
-      english: { ...base.languages.english, ...raw }
-    }
-  };
-}
-
 export default function useTypingAcademy() {
-  const [progressStore, setProgressStore] = useState(() => normalizeProgress(loadProgress()));
-
-  const activeLanguage = progressStore.activeLanguage || 'english';
-  const progress = progressStore.languages?.[activeLanguage] || createLanguageProgress();
+  const [progress, setProgress] = useState(() => loadProgress());
 
   const progressSummary = useMemo(() => {
     const lessonEntries = Object.values(progress.lessonStats || {});
@@ -86,32 +36,15 @@ export default function useTypingAcademy() {
   }, [progress]);
 
   const persist = (updater) => {
-    setProgressStore((prev) => {
-      const nextRaw = typeof updater === 'function' ? updater(prev) : updater;
-      const next = normalizeProgress(nextRaw);
+    setProgress((prev) => {
+      const next = typeof updater === 'function' ? updater(prev) : updater;
       saveProgress(next);
       return next;
     });
   };
 
-  const updateCurrentLanguageProgress = (updater) => {
-    persist((prev) => {
-      const currentLanguage = prev.activeLanguage || 'english';
-      const current = prev.languages?.[currentLanguage] || createLanguageProgress();
-      const nextCurrent = typeof updater === 'function' ? updater(current) : updater;
-
-      return {
-        ...prev,
-        languages: {
-          ...prev.languages,
-          [currentLanguage]: nextCurrent
-        }
-      };
-    });
-  };
-
   const completeLesson = ({ lessonId, result }) => {
-    updateCurrentLanguageProgress((prev) => {
+    persist((prev) => {
       const nextLesson = Math.min(TOTAL_LESSONS, lessonId + 1);
       const completedLessons = result.passed
         ? Array.from(new Set([...prev.completedLessons, lessonId])).sort((a, b) => a - b)
@@ -135,7 +68,6 @@ export default function useTypingAcademy() {
       const history = [
         {
           lessonId,
-          language: activeLanguage,
           ...result
         },
         ...(prev.history || [])
@@ -169,21 +101,15 @@ export default function useTypingAcademy() {
 
   const resetProgress = () => {
     persist({
-      activeLanguage,
-      languages: {
-        english: createLanguageProgress(),
-        hindi: createLanguageProgress()
-      }
+      completedLessons: [],
+      unlockedLessons: [1],
+      currentLesson: 1,
+      lessonStats: {},
+      totalSessions: 0,
+      totalPracticeTime: 0,
+      history: [],
+      achievements: []
     });
-  };
-
-  const setActiveLanguage = (language) => {
-    if (!LANGUAGE_OPTIONS.some((item) => item.id === language)) return;
-
-    persist((prev) => ({
-      ...prev,
-      activeLanguage: language
-    }));
   };
 
   return {
@@ -191,9 +117,6 @@ export default function useTypingAcademy() {
     progressSummary,
     completeLesson,
     resetProgress,
-    setProgress: updateCurrentLanguageProgress,
-    activeLanguage,
-    setActiveLanguage,
-    availableLanguages: LANGUAGE_OPTIONS
+    setProgress: persist
   };
 }
