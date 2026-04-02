@@ -32,10 +32,15 @@ It focuses on:
 - Real-time typing feedback and visual character states
 - Result workflow with pass/retry navigation
 - Dashboard analytics and milestone achievements
+- Lesson pagination with page-size controls and next/prev/first/last navigation
 
 ### Learning Modes
 - **Mission Mode**: unlock lessons sequentially
 - **Unlocked Mode**: access all lessons immediately
+
+### Mobile UX
+- Modern hamburger dropdown panel with high-contrast styling
+- Touch-friendly menu links and stronger active-route visibility
 
 ---
 
@@ -95,6 +100,17 @@ npm run build    # build production assets
 npm run preview  # preview built output
 npm run lint     # lint source files
 ```
+
+---
+
+## What’s New
+
+- Expanded curriculum to **250 lessons**
+- Added **100 extra foundation/basic lessons** (`151-250`)
+- Implemented **lesson pagination** on `/lessons`
+- Reworked **mobile hamburger dropdown** with modern panel styling
+- Rebuilt light/dark support with stronger readability
+- Redesigned toast notifications with high-contrast, solid backgrounds
 
 ---
 
@@ -240,6 +256,8 @@ src/
 - full keyboard guide for key-location awareness
 - light and dark theme support
 - high-contrast, readable toast system
+- paginated lessons screen for large curriculum browsing
+- modern mobile navigation dropdown
 
 ---
 
