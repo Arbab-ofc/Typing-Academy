@@ -16,7 +16,8 @@ export default function LessonPracticePage() {
   const lesson = getLessonById(lessonId);
 
   const numericLessonId = Number(lessonId);
-  const isUnlocked = progress.unlockedLessons.includes(numericLessonId);
+  const isUnlocked =
+    settings.learningMode === 'unlocked' || progress.unlockedLessons.includes(numericLessonId);
 
   const session = useTypingSession({
     lessonId: numericLessonId,

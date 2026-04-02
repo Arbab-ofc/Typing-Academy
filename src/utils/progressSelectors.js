@@ -1,6 +1,7 @@
-export function getLessonStatus(lessonId, progress) {
+export function getLessonStatus(lessonId, progress, learningMode = 'mission') {
   if (progress.completedLessons.includes(lessonId)) return 'completed';
   if (progress.currentLesson === lessonId) return 'current';
+  if (learningMode === 'unlocked') return 'unlocked';
   if (progress.unlockedLessons.includes(lessonId)) return 'unlocked';
   return 'locked';
 }

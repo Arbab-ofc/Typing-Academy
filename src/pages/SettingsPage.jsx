@@ -29,6 +29,19 @@ export default function SettingsPage() {
       </section>
 
       <SettingsPanel title="Preferences" description="Adjust behavior and readability.">
+        <SettingSelect
+          label="Learning Mode"
+          value={settings.learningMode}
+          onChange={(value) => {
+            updateSetting('learningMode', value);
+            toast.info(value === 'unlocked' ? 'Unlocked Mode enabled' : 'Mission Mode enabled');
+          }}
+          options={[
+            { label: 'Mission Mode', value: 'mission' },
+            { label: 'Unlocked Mode', value: 'unlocked' }
+          ]}
+        />
+
         <SettingToggle
           label="Sound Effects"
           description="Enable keystroke and completion sounds."

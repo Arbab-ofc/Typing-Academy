@@ -14,7 +14,8 @@ export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState('id-asc');
-  const { progress, progressSummary } = useAcademyContext();
+  const { progress, progressSummary, settings } = useAcademyContext();
+  const learningMode = settings.learningMode || 'mission';
 
   const filteredLessons = useMemo(() => {
     const base = activeCategory === 'All' ? LESSONS : LESSONS.filter((lesson) => lesson.category === activeCategory);
@@ -38,11 +39,11 @@ export default function LessonsPage() {
 
   const statusCounts = useMemo(
     () => ({
-      completed: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'completed').length,
-      unlocked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'unlocked').length,
-      locked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'locked').length
+      completed: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress, learningMode) === 'completed').length,
+      unlocked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress, learningMode) === 'unlocked').length,
+      locked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress, learningMode) === 'locked').length
     }),
-    [progress]
+    [progress, learningMode]
   );
 
   return (
@@ -51,7 +52,11 @@ export default function LessonsPage() {
         <SectionHeader
           eyebrow="Lesson Path"
           title="100 lessons to build complete typing fluency"
-          description="Progress unlocks sequentially. Complete your current lesson to move forward."
+          description={
+            learningMode === 'unlocked'
+              ? 'Unlocked Mode is active. You can start any lesson instantly.'
+              : 'Mission Mode is active. Complete your current lesson to unlock the next stage.'
+          }
           rightSlot={
             <Link
               to={`/lessons/${progress.currentLesson}`}
@@ -87,7 +92,15 @@ export default function LessonsPage() {
       <section className="rounded-2xl border border-ocean-500/30 bg-ocean-500/10 p-4">
         <p className="text-xs uppercase tracking-[0.14em] text-ocean-300">Current Focus</p>
         <p className="mt-1 text-sm text-slate-100">
-          You are currently on lesson <span className="font-bold">{progress.currentLesson}</span>. Complete it to unlock the next stage.
+          {learningMode === 'unlocked' ? (
+            <>
+              Unlocked Mode is enabled. All <span className="font-bold">{LESSONS.length}</span> lessons are available.
+            </>
+          ) : (
+            <>
+              You are currently on lesson <span className="font-bold">{progress.currentLesson}</span>. Complete it to unlock the next stage.
+            </>
+          )}
         </p>
       </section>
 
@@ -99,7 +112,9 @@ export default function LessonsPage() {
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {displayedLessons.length ? (
-          displayedLessons.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress)} />)
+          displayedLessons.map((lesson) => (
+            <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress, learningMode)} />
+          ))
         ) : (
           <div className="sm:col-span-2 xl:col-span-3">
             <EmptyState title="No lessons found" description="Try a different category or keyword to find matching lessons." />
