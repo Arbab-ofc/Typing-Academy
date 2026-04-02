@@ -49,6 +49,14 @@ const faqItems = [
   }
 ];
 
+const checklist = [
+  'Sit upright with relaxed shoulders.',
+  'Place fingers on home row before every drill.',
+  'Look at screen, not keyboard.',
+  'Prioritize 90%+ accuracy.',
+  'Repeat challenging lessons before moving ahead.'
+];
+
 export default function AboutPage() {
   return (
     <div className="space-y-6">
@@ -74,6 +82,17 @@ export default function AboutPage() {
         {faqItems.map((item) => (
           <FaqItem key={item.question} question={item.question} answer={item.answer} />
         ))}
+      </section>
+
+      <section className="rounded-3xl border border-white/10 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold text-white">Before You Practice</h2>
+        <ul className="mt-3 space-y-2 text-sm text-slate-300">
+          {checklist.map((item) => (
+            <li key={item} className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+              {item}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
