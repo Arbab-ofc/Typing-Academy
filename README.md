@@ -1,240 +1,62 @@
-# Typing Academy
-
 <div align="center">
 
-A modern, lesson-driven typewriting platform with **250 structured practices**, premium UI, dual learning modes, and local-first progress analytics.
+# Typing Academy
 
-[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+A premium, lesson-first typewriting platform with **250 guided practices**, dual learning modes, modern UI, and local-first analytics.
+
+[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=0B1020)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3+-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3+-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![React Router](https://img.shields.io/badge/React_Router-6+-CA4245?logo=reactrouter&logoColor=white)](https://reactrouter.com/)
-[![React Toastify](https://img.shields.io/badge/React_Toastify-Notifications-FF6A3D)](https://fkhadra.github.io/react-toastify/)
-[![LocalStorage](https://img.shields.io/badge/Persistence-localStorage-16A34A)](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-[![Status](https://img.shields.io/badge/Status-Production_Style-0EA5E9)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Toastify](https://img.shields.io/badge/React_Toastify-UI_Notifications-FF6A3D)](https://fkhadra.github.io/react-toastify/)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-0EA5E9)](#)
+[![Lessons](https://img.shields.io/badge/Lessons-250-16A34A)](#curriculum)
 
 </div>
 
 ---
 
-## Table of Contents
+## Why This Project
 
-1. [Project Vision](#project-vision)
-2. [Core Features](#core-features)
-3. [Tech Stack](#tech-stack)
-4. [Learning Modes](#learning-modes)
-5. [Product Routes](#product-routes)
-6. [Curriculum Map (250 Lessons)](#curriculum-map-250-lessons)
-7. [System Flow Graph](#system-flow-graph)
-8. [Project Architecture Map](#project-architecture-map)
-9. [Getting Started](#getting-started)
-10. [Run Scripts](#run-scripts)
-11. [LocalStorage Data Model](#localstorage-data-model)
-12. [Typing Engine Formulas](#typing-engine-formulas)
-13. [UI/UX Notes](#uiux-notes)
-14. [Deployment Notes](#deployment-notes)
-15. [Contributing](#contributing)
+Typing Academy is built as a structured skill-building product, not a random typing test.
+
+It focuses on:
+- progressive learning from posture and home-row basics to full-flow typing
+- real training metrics (WPM, accuracy, mistakes, progress)
+- meaningful lesson progression with mission/unlocked modes
+- premium responsive UI that works cleanly on mobile and desktop
+- local persistence so learners can resume instantly
 
 ---
 
-## Project Vision
+## Preview
 
-**Typing Academy** is not a random typing-test toy. It is a complete, structured typing education experience.
+### Core Experience
+- Structured lessons with clear goals
+- Real-time typing feedback and visual character states
+- Result workflow with pass/retry navigation
+- Dashboard analytics and milestone achievements
 
-This app is designed to:
-- teach typing from fundamentals to mastery in guided steps
-- prioritize typing posture, finger placement, and rhythm
-- provide measurable progress using WPM, accuracy, mistakes, and completion history
-- support both progression-based learning and all-unlocked practice
-- feel like a polished, premium edtech product across desktop and mobile
-
----
-
-## Core Features
-
-- **250 lesson-based practices** with progressive pedagogy
-- **Dual learning modes**
-  - `Mission Mode`: sequential unlock progression
-  - `Unlocked Mode`: all lessons instantly available
-- **Real-time typing engine**
-  - active-character tracking
-  - correct/incorrect highlighting
-  - live WPM and accuracy
-  - mistake and completion logic
-- **Result workflow**
-  - pass/fail-oriented feedback
-  - retry and next-lesson CTAs
-- **Analytics dashboard**
-  - completion, averages, best performance, session history
-  - lesson-wise stats + milestone achievements
-- **Settings + persistence**
-  - theme, panel size, text size, sound, learning mode
-  - full localStorage state retention
-- **Modern responsive UI**
-  - dark/light theme support
-  - mobile-first layouts
-  - keyboard guide with full key map
-- **Premium toast notifications**
-  - high-contrast, non-transparent, status-accented
+### Learning Modes
+- **Mission Mode**: unlock lessons sequentially
+- **Unlocked Mode**: access all lessons immediately
 
 ---
 
 ## Tech Stack
 
-### Frontend
-- React
-- Vite
-- Tailwind CSS
-- React Router
-
-### UI + Feedback
-- React Icons
-- React Toastify
-- react-loader-spinner
-
-### Data + State
-- React Hooks + Context API
-- localStorage persistence
+| Layer | Technologies |
+|---|---|
+| Frontend | React, Vite |
+| Styling | Tailwind CSS |
+| Routing | React Router |
+| UI Feedback | React Icons, React Toastify, react-loader-spinner |
+| Persistence | localStorage |
+| State | React Context + Hooks |
 
 ---
 
-## Learning Modes
-
-### 1) Mission Mode
-Sequential progression mode:
-- lesson 1 starts unlocked
-- each completed/passed lesson unlocks the next
-- designed for disciplined, curriculum-first growth
-
-### 2) Unlocked Mode
-Free practice mode:
-- all lessons available immediately
-- best for selective drill practice and review
-
----
-
-## Product Routes
-
-- `/` → Home
-- `/lessons` → All lessons grid + filters
-- `/lessons/:lessonId` → Typing practice screen
-- `/results/:lessonId` → Completion/result page
-- `/dashboard` → Analytics + milestones
-- `/settings` → Preferences + mode/theme
-- `/about` → Help and typing guidance
-
----
-
-## Curriculum Map (250 Lessons)
-
-### Map A: Core Path (1-100)
-
-```mermaid
-flowchart LR
-  A[Core Curriculum 1-100]
-  A --> B[Foundations: 1-8]
-  A --> C[Top Row: 9-16]
-  A --> D[Bottom Row: 17-24]
-  A --> E[Shift and Capitals: 25-30]
-  A --> F[Numbers: 31-36]
-  A --> G[Punctuation and Symbols: 37-42]
-  A --> H[Core Mastery: 43-50]
-  A --> I[Advanced Mastery: 51-100]
-```
-
-### Map B: Foundation Boosters (101-250)
-
-```mermaid
-flowchart LR
-  X[Foundation Booster Track 101-250]
-  X --> Y[Foundation Booster 1: 101-150]
-  X --> Z[Foundation Booster 2: 151-200]
-  X --> W[Foundation Booster 3: 201-250]
-```
-
-### High-Level Phase Distribution
-
-| Phase | Lesson Range | Focus |
-|---|---|---|
-| Foundations | 1-8 | posture, anchors, home row |
-| Top Row | 9-16 | reaches + row integration |
-| Bottom Row | 17-24 | lower row control |
-| Shift & Capitals | 25-30 | uppercase technique |
-| Numbers | 31-36 | number-row flow |
-| Punctuation | 37-42 | punctuation + symbols |
-| Core Mastery | 43-50 | real-world readiness |
-| Advanced Mastery | 51-100 | speed/accuracy deepening |
-| Foundation Booster 1 | 101-150 | foundational reinforcement |
-| Foundation Booster 2 | 151-200 | additional basic drills |
-| Foundation Booster 3 | 201-250 | high-volume basic practice |
-
----
-
-## System Flow Graph
-
-```mermaid
-flowchart TD
-  A[User Opens App] --> B[Load Settings + Progress from localStorage]
-  B --> C{Select Learning Mode}
-  C -->|Mission Mode| D[Show Locked/Unlocked States]
-  C -->|Unlocked Mode| E[All Lessons Accessible]
-  D --> F[Start Practice]
-  E --> F[Start Practice]
-  F --> G[Typing Engine Starts on First Keystroke]
-  G --> H[Live Metrics: WPM, Accuracy, Mistakes, Progress]
-  H --> I{Lesson Complete?}
-  I -->|No| H
-  I -->|Yes| J[Generate Result]
-  J --> K[Persist Session + Stats + Achievements]
-  K --> L[Result Page + Toast Feedback]
-  L --> M[Dashboard / Next Lesson / Retry]
-```
-
----
-
-## Project Architecture Map
-
-```text
-src/
-  components/
-    common/        # shared UI primitives, context provider
-    layout/        # navbar, footer, app shell
-    home/          # hero, roadmap, feature sections
-    lessons/       # lesson cards, status badges, filters
-    practice/      # typing panel, keyboard guide, result card
-    dashboard/     # analytics cards, history, tables
-    settings/      # reusable setting controls
-    about/         # help/faq section components
-  data/
-    lessons.js     # complete 1..250 curriculum data
-  hooks/
-    useTypingSession.js
-    useTypingAcademy.js
-    useAcademySettings.js
-    useAcademyContext.js
-  pages/
-    HomePage.jsx
-    LessonsPage.jsx
-    LessonPracticePage.jsx
-    ResultPage.jsx
-    DashboardPage.jsx
-    SettingsPage.jsx
-    AboutPage.jsx
-  routes/
-    AppRoutes.jsx
-  utils/
-    constants.js
-    storage.js
-    progressSelectors.js
-    achievements.js
-    typing.js
-  styles/
-    index.css
-```
-
----
-
-## Getting Started
+## Quick Start
 
 ### 1) Clone
 
@@ -243,100 +65,209 @@ git clone https://github.com/Arbab-ofc/Typing-Academy.git
 cd Typing-Academy
 ```
 
-### 2) Install Dependencies
+### 2) Install
 
 ```bash
 npm install
 ```
 
-### 3) Start Development Server
+### 3) Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open the printed localhost URL (typically `http://localhost:5173`).
-
----
-
-## Run Scripts
+### 4) Build Production
 
 ```bash
-npm run dev      # start local dev server
-npm run build    # production build
-npm run preview  # preview production build locally
-npm run lint     # lint source
+npm run build
+```
+
+### 5) Preview Production Build
+
+```bash
+npm run preview
 ```
 
 ---
 
-## LocalStorage Data Model
+## Available Scripts
 
-The app stores all learning state locally:
-
-- `typing_academy_progress_v1`
-  - completed lessons
-  - unlocked lessons
-  - current lesson
-  - per-lesson stats
-  - total sessions/time
-  - history
-  - achievements
-- `typing_academy_settings_v1`
-  - theme
-  - learning mode
-  - panel/text size
-  - sound preferences
-- `typing_academy_recent_result_v1`
-  - last lesson result snapshot
+```bash
+npm run dev      # run local Vite dev server
+npm run build    # build production assets
+npm run preview  # preview built output
+npm run lint     # lint source files
+```
 
 ---
 
-## Typing Engine Formulas
+## Routes
 
+| Route | Purpose |
+|---|---|
+| `/` | Home and product overview |
+| `/lessons` | Full lesson grid with filters and status |
+| `/lessons/:lessonId` | Typing practice for a lesson |
+| `/results/:lessonId` | Post-lesson result summary |
+| `/dashboard` | Progress analytics and history |
+| `/settings` | Theme, mode, panel/text, sound |
+| `/about` | Typing help and guidance |
+
+---
+
+## Curriculum
+
+Typing Academy currently includes **250 lessons**.
+
+### Core Path (1-100)
+
+```mermaid
+flowchart LR
+  A[Core Curriculum 1-100]
+  A --> B[Foundations 1-8]
+  A --> C[Top Row 9-16]
+  A --> D[Bottom Row 17-24]
+  A --> E[Shift and Capitals 25-30]
+  A --> F[Numbers 31-36]
+  A --> G[Punctuation and Symbols 37-42]
+  A --> H[Core Mastery 43-50]
+  A --> I[Advanced Mastery 51-100]
+```
+
+### Foundation Booster Track (101-250)
+
+```mermaid
+flowchart LR
+  X[Foundation Booster Track]
+  X --> Y[101-150]
+  X --> Z[151-200]
+  X --> W[201-250]
+```
+
+### Phase Table
+
+| Phase | Range | Focus |
+|---|---|---|
+| Foundations | 1-8 | posture, finger anchors, basic rhythm |
+| Top Row | 9-16 | top-row reach and return control |
+| Bottom Row | 17-24 | lower-row precision |
+| Shift & Capitals | 25-30 | uppercase mechanics |
+| Numbers | 31-36 | number-row confidence |
+| Punctuation & Symbols | 37-42 | punctuation accuracy |
+| Core Mastery | 43-50 | integrated practical typing |
+| Advanced Mastery | 51-100 | speed + accuracy depth |
+| Foundation Booster 1 | 101-150 | extra basic reinforcement |
+| Foundation Booster 2 | 151-200 | extended basic drills |
+| Foundation Booster 3 | 201-250 | high-volume foundation practice |
+
+---
+
+## Typing Engine
+
+### Live Metrics
+- elapsed time
+- typed characters
+- correct/incorrect character tracking
+- mistakes count
+- progress percentage
+- WPM and accuracy
+
+### Formulas
 - **WPM** = `(typedCharacters / 5) / elapsedMinutes`
 - **Accuracy** = `(correctCharacters / totalTypedCharacters) * 100`
 
-Engine behavior includes:
+### Behavior
 - timer starts on first keypress
-- active character tracking
-- correct/incorrect visual states
-- backspace support
-- completion + result generation
-- progress save and unlock handling
+- supports backspace correction
+- supports completion detection and result generation
+- saves progress + updates unlock state on completion
 
 ---
 
-## UI/UX Notes
+## Local Storage Schema
 
-- Responsive layout optimized for mobile, tablet, laptop, desktop
-- Premium card system with rounded surfaces and soft depth
-- Light + dark theme support with high-contrast visibility tuning
-- Full keyboard guide for key location awareness
-- Minimal, high-contrast toast feedback
+| Key | Stores |
+|---|---|
+| `typing_academy_progress_v1` | completed/unlocked lessons, stats, history, achievements |
+| `typing_academy_settings_v1` | theme, learning mode, sound, panel/text size |
+| `typing_academy_recent_result_v1` | latest lesson result payload |
 
 ---
 
-## Deployment Notes
+## Project Structure
 
-This is a frontend-only Vite app and can be deployed easily to:
-- Vercel
-- Netlify
-- GitHub Pages (with proper Vite base config)
+```text
+src/
+  components/
+    about/
+    common/
+    dashboard/
+    home/
+    layout/
+    lessons/
+    practice/
+    settings/
+  data/
+    lessons.js
+  hooks/
+    useAcademyContext.js
+    useAcademySettings.js
+    useTypingAcademy.js
+    useTypingSession.js
+  pages/
+    AboutPage.jsx
+    DashboardPage.jsx
+    HomePage.jsx
+    LessonPracticePage.jsx
+    LessonsPage.jsx
+    ResultPage.jsx
+    SettingsPage.jsx
+  routes/
+    AppRoutes.jsx
+  styles/
+    index.css
+  utils/
+    achievements.js
+    constants.js
+    progressSelectors.js
+    storage.js
+    typing.js
+```
 
-For zero-backend deployment:
-1. run `npm run build`
-2. deploy the generated `dist/` directory
+---
+
+## UI / UX Design Notes
+
+- responsive layout from mobile to desktop
+- premium card hierarchy and visual rhythm
+- full keyboard guide for key-location awareness
+- light and dark theme support
+- high-contrast, readable toast system
+
+---
+
+## Deployment
+
+This is a frontend-only app and can be deployed to Vercel/Netlify/GitHub Pages.
+
+### Production Output
+
+```bash
+npm run build
+```
+
+Deploy the generated `dist/` directory.
 
 ---
 
 ## Contributing
 
-1. Fork the repo
-2. Create a feature branch
+1. Fork repository
+2. Create feature branch
 3. Commit meaningful changes
-4. Open a PR with clear screenshots/notes
+4. Open pull request with clear context
 
 ---
 
-If this project helped you, consider starring the repository.
+If this project is useful, star the repository.
