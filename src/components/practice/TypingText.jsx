@@ -1,15 +1,15 @@
 const textSizeClassMap = {
-  sm: 'text-base leading-7 sm:text-lg sm:leading-8',
-  md: 'text-lg leading-8 sm:text-xl sm:leading-9',
-  lg: 'text-xl leading-9 sm:text-2xl sm:leading-10'
+  sm: 'text-sm leading-6 sm:text-lg sm:leading-8',
+  md: 'text-base leading-7 sm:text-xl sm:leading-9',
+  lg: 'text-lg leading-8 sm:text-2xl sm:leading-10'
 };
 
 export default function TypingText({ targetText, typedText, activeIndex, textSize = 'md' }) {
   return (
     <div
-      className={`rounded-2xl border border-white/10 bg-ink-900/70 p-5 ${
+      className={`rounded-2xl border border-white/10 bg-ink-900/70 p-3 sm:p-5 ${
         textSizeClassMap[textSize] || textSizeClassMap.md
-      }`}
+      } whitespace-pre-wrap break-all sm:break-words`}
     >
       {targetText.split('').map((char, index) => {
         let className = 'text-slate-500';
@@ -21,7 +21,7 @@ export default function TypingText({ targetText, typedText, activeIndex, textSiz
 
         return (
           <span key={`${char}-${index}`} className={`font-mono ${className}`}>
-            {char === ' ' ? '\u00A0' : char}
+            {char}
           </span>
         );
       })}

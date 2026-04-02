@@ -13,10 +13,10 @@ const KEYBOARD_ROWS = [
     { label: '0', value: '0' },
     { label: '-', value: '-' },
     { label: '=', value: '=' },
-    { label: 'Backspace', value: 'BACKSPACE', width: 'min-w-[6.2rem]' }
+    { label: 'Backspace', shortLabel: 'Bksp', value: 'BACKSPACE', width: 'min-w-[6.2rem]' }
   ],
   [
-    { label: 'Tab', value: 'TAB', width: 'min-w-[4.2rem]' },
+    { label: 'Tab', shortLabel: 'Tab', value: 'TAB', width: 'min-w-[4.2rem]' },
     { label: 'Q', value: 'Q' },
     { label: 'W', value: 'W' },
     { label: 'E', value: 'E' },
@@ -32,7 +32,7 @@ const KEYBOARD_ROWS = [
     { label: '\\', value: '\\', width: 'min-w-[4rem]' }
   ],
   [
-    { label: 'Caps', value: 'CAPSLOCK', width: 'min-w-[5.2rem]' },
+    { label: 'Caps', shortLabel: 'Caps', value: 'CAPSLOCK', width: 'min-w-[5.2rem]' },
     { label: 'A', value: 'A' },
     { label: 'S', value: 'S' },
     { label: 'D', value: 'D' },
@@ -44,10 +44,10 @@ const KEYBOARD_ROWS = [
     { label: 'L', value: 'L' },
     { label: ';', value: ';' },
     { label: "'", value: "'" },
-    { label: 'Enter', value: 'ENTER', width: 'min-w-[5.6rem]' }
+    { label: 'Enter', shortLabel: 'Ent', value: 'ENTER', width: 'min-w-[5.6rem]' }
   ],
   [
-    { label: 'Shift', value: 'SHIFT', width: 'min-w-[6.4rem]' },
+    { label: 'Shift', shortLabel: 'Shft', value: 'SHIFT', width: 'min-w-[6.4rem]' },
     { label: 'Z', value: 'Z' },
     { label: 'X', value: 'X' },
     { label: 'C', value: 'C' },
@@ -58,16 +58,16 @@ const KEYBOARD_ROWS = [
     { label: ',', value: ',' },
     { label: '.', value: '.' },
     { label: '/', value: '/' },
-    { label: 'Shift', value: 'SHIFT', width: 'min-w-[6.4rem]' }
+    { label: 'Shift', shortLabel: 'Shft', value: 'SHIFT', width: 'min-w-[6.4rem]' }
   ],
   [
-    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3.8rem]' },
+    { label: 'Ctrl', shortLabel: 'Ctl', value: 'CTRL', width: 'min-w-[3.8rem]' },
     { label: 'Win', value: 'META', width: 'min-w-[3.8rem]' },
     { label: 'Alt', value: 'ALT', width: 'min-w-[3.8rem]' },
-    { label: 'Space', value: 'SPACE', width: 'min-w-[18rem]' },
+    { label: 'Space', shortLabel: 'Spc', value: 'SPACE', width: 'min-w-[18rem]' },
     { label: 'Alt', value: 'ALT', width: 'min-w-[3.8rem]' },
     { label: 'Fn', value: 'FN', width: 'min-w-[3.8rem]' },
-    { label: 'Ctrl', value: 'CTRL', width: 'min-w-[3.8rem]' }
+    { label: 'Ctrl', shortLabel: 'Ctl', value: 'CTRL', width: 'min-w-[3.8rem]' }
   ]
 ];
 
@@ -111,10 +111,11 @@ export default function KeyboardGuide({ keysPracticed }) {
   const activeKeys = getActiveKeys(keysPracticed);
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+    <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
       <p className="text-xs uppercase tracking-[0.16em] text-slate-400">Keyboard Guide</p>
-      <div className="mt-3 overflow-x-auto">
-        <div className="mx-auto flex min-w-max flex-col items-center gap-2 pb-1">
+      <div className="mt-3 overflow-hidden">
+        <div className="mx-auto w-max origin-top scale-[0.52] transform-gpu sm:scale-[0.7] md:scale-[0.85] lg:scale-100">
+          <div className="flex flex-col items-center gap-2">
           {KEYBOARD_ROWS.map((row, rowIndex) => (
             <div key={rowIndex} className="flex justify-center gap-2">
             {row.map((key) => {
@@ -136,6 +137,7 @@ export default function KeyboardGuide({ keysPracticed }) {
             })}
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
