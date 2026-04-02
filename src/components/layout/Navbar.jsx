@@ -22,8 +22,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-950/80 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="rounded-xl bg-gradient-to-br from-ocean-500 to-mint-500 px-2 py-1 font-display text-xs font-bold uppercase tracking-wider text-ink-950">TA</span>
+        <Link to="/" className="flex items-center">
           <span className="font-display text-lg font-semibold text-white">Typing Academy</span>
         </Link>
 
