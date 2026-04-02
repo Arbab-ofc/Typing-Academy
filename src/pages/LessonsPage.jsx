@@ -39,7 +39,7 @@ export default function LessonsPage() {
   }, [filteredLessons, sortBy]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <SectionHeader
           eyebrow="Lesson Path"

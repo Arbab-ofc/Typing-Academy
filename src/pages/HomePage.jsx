@@ -53,7 +53,7 @@ export default function HomePage() {
   const { progress, progressSummary } = useAcademyContext();
 
   return (
-    <div className="space-y-14 sm:space-y-16">
+    <div className="space-y-10 sm:space-y-14 lg:space-y-16">
       <HeroSection currentLessonId={progress.currentLesson} />
       <DailyPracticeBanner currentLessonId={progress.currentLesson} />
 

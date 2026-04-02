@@ -14,7 +14,7 @@ export default function AppLayout() {
   return (
     <div className="relative min-h-screen">
       <Navbar />
-      <main className="mx-auto w-full max-w-7xl px-4 pb-24 pt-8 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-6 sm:px-6 sm:pt-8 lg:px-8">
         <Outlet />
       </main>
       <Footer />
