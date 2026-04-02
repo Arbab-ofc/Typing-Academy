@@ -81,6 +81,14 @@ export default function LessonsPage() {
         </div>
       </section>
 
+      <section className="rounded-2xl border border-ocean-500/30 bg-ocean-500/10 p-4">
+        <p className="text-xs uppercase tracking-[0.14em] text-ocean-300">Current Focus</p>
+        <p className="mt-1 text-sm text-slate-100">
+          You are currently on lesson <span className="font-bold">{progress.currentLesson}</span>. Complete it to unlock
+          the next stage.
+        </p>
+      </section>
+
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {displayedLessons.map((lesson) => (
           <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress)} />
