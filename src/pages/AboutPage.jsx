@@ -1,4 +1,5 @@
 import SectionHeader from '../components/common/SectionHeader';
+import FaqItem from '../components/about/FaqItem';
 
 const helpCards = [
   {
@@ -33,6 +34,21 @@ const helpCards = [
   }
 ];
 
+const faqItems = [
+  {
+    question: 'How often should I practice?',
+    answer: 'Practice 15 to 25 minutes daily for steady progress without fatigue.'
+  },
+  {
+    question: 'Should I look at the keyboard?',
+    answer: 'Avoid it as much as possible. Building screen-focused muscle memory is essential.'
+  },
+  {
+    question: 'When should I move to the next lesson?',
+    answer: 'Move ahead after meeting lesson goals with confidence and repeatability.'
+  }
+];
+
 export default function AboutPage() {
   return (
     <div className="space-y-6">
@@ -50,6 +66,13 @@ export default function AboutPage() {
             <h2 className="font-display text-lg font-semibold text-white">{item.title}</h2>
             <p className="mt-2 text-sm text-slate-300">{item.content}</p>
           </article>
+        ))}
+      </section>
+
+      <section className="space-y-3 rounded-3xl border border-white/10 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold text-white">Quick FAQ</h2>
+        {faqItems.map((item) => (
+          <FaqItem key={item.question} question={item.question} answer={item.answer} />
         ))}
       </section>
     </div>
