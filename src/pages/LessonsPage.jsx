@@ -12,16 +12,31 @@ import LessonSearch from '../components/lessons/LessonSearch';
 export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [query, setQuery] = useState('');
+  const [sortBy, setSortBy] = useState('id-asc');
   const { progress, progressSummary } = useAcademyContext();
 
   const filteredLessons = useMemo(() => {
     const base = activeCategory === 'All' ? LESSONS : LESSONS.filter((lesson) => lesson.category === activeCategory);
     if (!query.trim()) return base;
     const normalized = query.trim().toLowerCase();
-    return base.filter((lesson) =>
+    const filtered = base.filter((lesson) =>
       `${lesson.title} ${lesson.keysPracticed} ${lesson.description}`.toLowerCase().includes(normalized)
     );
+    return filtered;
   }, [activeCategory, query]);
+
+  const displayedLessons = useMemo(() => {
+    const items = [...filteredLessons];
+    if (sortBy === 'difficulty') {
+      const weight = { Easy: 1, Medium: 2, Hard: 3, Expert: 4 };
+      items.sort((a, b) => (weight[a.difficulty] || 99) - (weight[b.difficulty] || 99));
+    } else if (sortBy === 'id-desc') {
+      items.sort((a, b) => b.id - a.id);
+    } else {
+      items.sort((a, b) => a.id - b.id);
+    }
+    return items;
+  }, [filteredLessons, sortBy]);
 
   return (
     <div className="space-y-8">
@@ -52,10 +67,22 @@ export default function LessonsPage() {
           />
           <LessonSearch query={query} onChange={setQuery} />
         </div>
+        <div className="mt-4 max-w-xs">
+          <label className="block text-xs uppercase tracking-[0.14em] text-slate-400">Sort</label>
+          <select
+            value={sortBy}
+            onChange={(event) => setSortBy(event.target.value)}
+            className="mt-2 w-full rounded-xl border border-white/10 bg-ink-900 px-3 py-2 text-sm text-slate-100 outline-none focus:border-ocean-500"
+          >
+            <option value="id-asc">Lesson Number (Ascending)</option>
+            <option value="id-desc">Lesson Number (Descending)</option>
+            <option value="difficulty">Difficulty</option>
+          </select>
+        </div>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {filteredLessons.map((lesson) => (
+        {displayedLessons.map((lesson) => (
           <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress)} />
         ))}
       </section>
