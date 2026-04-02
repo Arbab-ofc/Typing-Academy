@@ -3,6 +3,14 @@ import LessonStatusBadge from './LessonStatusBadge';
 
 export default function LessonCard({ lesson, status }) {
   const isLocked = status === 'locked';
+  const difficultyClass =
+    lesson.difficulty === 'Easy'
+      ? 'text-mint-300'
+      : lesson.difficulty === 'Medium'
+        ? 'text-ocean-300'
+        : lesson.difficulty === 'Hard'
+          ? 'text-amber-300'
+          : 'text-rose-300';
 
   return (
     <article
@@ -33,7 +41,7 @@ export default function LessonCard({ lesson, status }) {
         </div>
         <div className="rounded-lg bg-white/5 p-2">
           <dt className="text-slate-400">Difficulty</dt>
-          <dd className="mt-1 text-slate-100">{lesson.difficulty}</dd>
+          <dd className={`mt-1 font-semibold ${difficultyClass}`}>{lesson.difficulty}</dd>
         </div>
         <div className="col-span-2 rounded-lg bg-white/5 p-2">
           <dt className="text-slate-400">Keys</dt>
