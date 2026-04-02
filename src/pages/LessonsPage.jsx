@@ -38,6 +38,15 @@ export default function LessonsPage() {
     return items;
   }, [filteredLessons, sortBy]);
 
+  const statusCounts = useMemo(
+    () => ({
+      completed: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'completed').length,
+      unlocked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'unlocked').length,
+      locked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'locked').length
+    }),
+    [progress]
+  );
+
   return (
     <div className="space-y-6 sm:space-y-8">
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
@@ -87,6 +96,18 @@ export default function LessonsPage() {
           You are currently on lesson <span className="font-bold">{progress.currentLesson}</span>. Complete it to unlock
           the next stage.
         </p>
+      </section>
+
+      <section className="flex flex-wrap gap-2">
+        <span className="rounded-full border border-mint-500/30 bg-mint-500/10 px-3 py-1 text-xs text-mint-200">
+          Completed: {statusCounts.completed}
+        </span>
+        <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-slate-200">
+          Unlocked: {statusCounts.unlocked}
+        </span>
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-400">
+          Locked: {statusCounts.locked}
+        </span>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
