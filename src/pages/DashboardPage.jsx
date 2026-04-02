@@ -49,6 +49,13 @@ export default function DashboardPage() {
         <DashboardStatCard label="Avg Session Time" value={formatDuration(averageSessionTime)} />
       </section>
 
+      <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-ocean-500/10 to-mint-500/10 p-5">
+        <p className="text-xs uppercase tracking-[0.14em] text-ocean-300">Continue Learning</p>
+        <p className="mt-1 text-sm text-slate-100">
+          Continue from lesson <span className="font-semibold">{progress.currentLesson}</span> to maintain your streak.
+        </p>
+      </section>
+
       <section className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
           <h2 className="font-display text-xl font-semibold text-white">Milestones</h2>
