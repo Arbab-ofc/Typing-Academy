@@ -1,6 +1,16 @@
-export default function TypingText({ targetText, typedText, activeIndex }) {
+const textSizeClassMap = {
+  sm: 'text-base leading-7 sm:text-lg sm:leading-8',
+  md: 'text-lg leading-8 sm:text-xl sm:leading-9',
+  lg: 'text-xl leading-9 sm:text-2xl sm:leading-10'
+};
+
+export default function TypingText({ targetText, typedText, activeIndex, textSize = 'md' }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-ink-900/70 p-5 text-lg leading-8 sm:text-xl sm:leading-9">
+    <div
+      className={`rounded-2xl border border-white/10 bg-ink-900/70 p-5 ${
+        textSizeClassMap[textSize] || textSizeClassMap.md
+      }`}
+    >
       {targetText.split('').map((char, index) => {
         let className = 'text-slate-500';
         if (index < typedText.length) {

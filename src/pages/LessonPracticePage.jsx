@@ -11,7 +11,7 @@ import { saveRecentResult } from '../utils/storage';
 export default function LessonPracticePage() {
   const { lessonId } = useParams();
   const navigate = useNavigate();
-  const { progress, completeLesson } = useAcademyContext();
+  const { progress, completeLesson, settings } = useAcademyContext();
   const lesson = getLessonById(lessonId);
 
   const numericLessonId = Number(lessonId);
@@ -84,7 +84,13 @@ export default function LessonPracticePage() {
         </div>
       </section>
 
-      <TypingPanel lesson={lesson} session={session} onComplete={handleComplete} />
+      <TypingPanel
+        lesson={lesson}
+        session={session}
+        onComplete={handleComplete}
+        textSize={settings.textSize}
+        panelSize={settings.panelSize}
+      />
     </div>
   );
 }

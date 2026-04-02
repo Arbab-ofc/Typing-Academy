@@ -4,7 +4,13 @@ import TypingInput from './TypingInput';
 import StatsBar from './StatsBar';
 import KeyboardGuide from './KeyboardGuide';
 
-export default function TypingPanel({ lesson, session, onComplete }) {
+const panelClassMap = {
+  compact: 'space-y-4 p-4 sm:p-5',
+  comfortable: 'space-y-5 p-5 sm:p-6',
+  spacious: 'space-y-6 p-6 sm:p-8'
+};
+
+export default function TypingPanel({ lesson, session, onComplete, textSize = 'md', panelSize = 'comfortable' }) {
   const {
     typedText,
     elapsedSeconds,
@@ -18,7 +24,7 @@ export default function TypingPanel({ lesson, session, onComplete }) {
   } = session;
 
   return (
-    <div className="space-y-5 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+    <div className={`rounded-3xl border border-white/10 bg-white/5 ${panelClassMap[panelSize] || panelClassMap.comfortable}`}>
       <StatsBar elapsedSeconds={elapsedSeconds} metrics={metrics} />
 
       {!isStarted ? (
@@ -27,7 +33,7 @@ export default function TypingPanel({ lesson, session, onComplete }) {
         </p>
       ) : null}
 
-      <TypingText targetText={lesson.content} typedText={typedText} activeIndex={activeIndex} />
+      <TypingText targetText={lesson.content} typedText={typedText} activeIndex={activeIndex} textSize={textSize} />
       <TypingInput value={typedText} onChange={onTextChange} disabled={isComplete} />
 
       <KeyboardGuide keysPracticed={lesson.keysPracticed} />
