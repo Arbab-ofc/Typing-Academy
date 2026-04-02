@@ -1518,6 +1518,1008 @@ const lessons = [
     difficulty: "Medium"
   }
 
+  ,
+  {
+    id: 151,
+    title: "Foundation Core Drill 1",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 1 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 152,
+    title: "Foundation Core Drill 2",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 2 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 153,
+    title: "Foundation Core Drill 3",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 3 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 154,
+    title: "Foundation Core Drill 4",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 4 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 155,
+    title: "Foundation Core Drill 5",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 5 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 156,
+    title: "Foundation Core Drill 6",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 6 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 157,
+    title: "Foundation Core Drill 7",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 7 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 158,
+    title: "Foundation Core Drill 8",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 8 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 159,
+    title: "Foundation Core Drill 9",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 9 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 160,
+    title: "Foundation Core Drill 10",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 10 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 161,
+    title: "Foundation Core Drill 11",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 11 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 162,
+    title: "Foundation Core Drill 12",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 12 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 163,
+    title: "Foundation Core Drill 13",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 13 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 164,
+    title: "Foundation Core Drill 14",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 14 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 165,
+    title: "Foundation Core Drill 15",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 15 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 166,
+    title: "Foundation Core Drill 16",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 16 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 167,
+    title: "Foundation Core Drill 17",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 17 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 168,
+    title: "Foundation Core Drill 18",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 18 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 169,
+    title: "Foundation Core Drill 19",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 19 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 170,
+    title: "Foundation Core Drill 20",
+    description: "Reinforce home-row control, posture, and steady beginner rhythm.",
+    category: "Foundations",
+    keysPracticed: "home row + posture",
+    content: "Keep a neutral posture and type asdf jkl; cycle 20 with calm, even timing and clean spacing.",
+    goal: "Maintain 93%+ accuracy and relaxed form",
+    difficulty: "Easy"
+  },
+  {
+    id: 171,
+    title: "Foundation Basic Reach 1",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "e i",
+    content: "Practice e i gently, return to home row after each press, and keep your breathing steady in round 1.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 172,
+    title: "Foundation Basic Reach 2",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "r u",
+    content: "Practice r u gently, return to home row after each press, and keep your breathing steady in round 2.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 173,
+    title: "Foundation Basic Reach 3",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "w o",
+    content: "Practice w o gently, return to home row after each press, and keep your breathing steady in round 3.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 174,
+    title: "Foundation Basic Reach 4",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "q p",
+    content: "Practice q p gently, return to home row after each press, and keep your breathing steady in round 4.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 175,
+    title: "Foundation Basic Reach 5",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "c m",
+    content: "Practice c m gently, return to home row after each press, and keep your breathing steady in round 5.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 176,
+    title: "Foundation Basic Reach 6",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "v n",
+    content: "Practice v n gently, return to home row after each press, and keep your breathing steady in round 6.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 177,
+    title: "Foundation Basic Reach 7",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "x ,",
+    content: "Practice x , gently, return to home row after each press, and keep your breathing steady in round 7.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 178,
+    title: "Foundation Basic Reach 8",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "z .",
+    content: "Practice z . gently, return to home row after each press, and keep your breathing steady in round 8.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 179,
+    title: "Foundation Basic Reach 9",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "top row",
+    content: "Practice top row gently, return to home row after each press, and keep your breathing steady in round 9.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 180,
+    title: "Foundation Basic Reach 10",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "bottom row",
+    content: "Practice bottom row gently, return to home row after each press, and keep your breathing steady in round 10.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 181,
+    title: "Foundation Basic Reach 11",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "e i",
+    content: "Practice e i gently, return to home row after each press, and keep your breathing steady in round 11.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 182,
+    title: "Foundation Basic Reach 12",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "r u",
+    content: "Practice r u gently, return to home row after each press, and keep your breathing steady in round 12.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 183,
+    title: "Foundation Basic Reach 13",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "w o",
+    content: "Practice w o gently, return to home row after each press, and keep your breathing steady in round 13.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 184,
+    title: "Foundation Basic Reach 14",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "q p",
+    content: "Practice q p gently, return to home row after each press, and keep your breathing steady in round 14.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 185,
+    title: "Foundation Basic Reach 15",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "c m",
+    content: "Practice c m gently, return to home row after each press, and keep your breathing steady in round 15.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 186,
+    title: "Foundation Basic Reach 16",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "v n",
+    content: "Practice v n gently, return to home row after each press, and keep your breathing steady in round 16.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 187,
+    title: "Foundation Basic Reach 17",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "x ,",
+    content: "Practice x , gently, return to home row after each press, and keep your breathing steady in round 17.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 188,
+    title: "Foundation Basic Reach 18",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "z .",
+    content: "Practice z . gently, return to home row after each press, and keep your breathing steady in round 18.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 189,
+    title: "Foundation Basic Reach 19",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "top row",
+    content: "Practice top row gently, return to home row after each press, and keep your breathing steady in round 19.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 190,
+    title: "Foundation Basic Reach 20",
+    description: "Practice nearby reaches and immediate return to home row.",
+    category: "Foundations",
+    keysPracticed: "bottom row",
+    content: "Practice bottom row gently, return to home row after each press, and keep your breathing steady in round 20.",
+    goal: "Reduce finger drift and keep mistakes low",
+    difficulty: "Easy"
+  },
+  {
+    id: 191,
+    title: "Foundation Word Flow 1",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 1",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 192,
+    title: "Foundation Word Flow 2",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 2",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 193,
+    title: "Foundation Word Flow 3",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 3",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 194,
+    title: "Foundation Word Flow 4",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 4",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 195,
+    title: "Foundation Word Flow 5",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 5",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 196,
+    title: "Foundation Word Flow 6",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 6",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 197,
+    title: "Foundation Word Flow 7",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 7",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 198,
+    title: "Foundation Word Flow 8",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 8",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 199,
+    title: "Foundation Word Flow 9",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 9",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 200,
+    title: "Foundation Word Flow 10",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 10",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 201,
+    title: "Foundation Word Flow 11",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 11",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 202,
+    title: "Foundation Word Flow 12",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 12",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 203,
+    title: "Foundation Word Flow 13",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 13",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 204,
+    title: "Foundation Word Flow 14",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 14",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 205,
+    title: "Foundation Word Flow 15",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 15",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 206,
+    title: "Foundation Word Flow 16",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 16",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 207,
+    title: "Foundation Word Flow 17",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 17",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 208,
+    title: "Foundation Word Flow 18",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 18",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 209,
+    title: "Foundation Word Flow 19",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 19",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 210,
+    title: "Foundation Word Flow 20",
+    description: "Build confidence with simple words and spacing consistency.",
+    category: "Foundations",
+    keysPracticed: "basic words",
+    content: "calm focus simple steady clear typing method control rhythm lesson set 20",
+    goal: "Consistent spacing with readable pace",
+    difficulty: "Easy"
+  },
+  {
+    id: 211,
+    title: "Foundation Sentence Flow 1",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 1.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 212,
+    title: "Foundation Sentence Flow 2",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 2.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 213,
+    title: "Foundation Sentence Flow 3",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 3.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 214,
+    title: "Foundation Sentence Flow 4",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 4.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 215,
+    title: "Foundation Sentence Flow 5",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 5.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 216,
+    title: "Foundation Sentence Flow 6",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 6.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 217,
+    title: "Foundation Sentence Flow 7",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 7.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 218,
+    title: "Foundation Sentence Flow 8",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 8.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 219,
+    title: "Foundation Sentence Flow 9",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 9.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 220,
+    title: "Foundation Sentence Flow 10",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 10.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 221,
+    title: "Foundation Sentence Flow 11",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 11.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 222,
+    title: "Foundation Sentence Flow 12",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 12.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 223,
+    title: "Foundation Sentence Flow 13",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 13.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 224,
+    title: "Foundation Sentence Flow 14",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 14.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 225,
+    title: "Foundation Sentence Flow 15",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 15.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 226,
+    title: "Foundation Sentence Flow 16",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 16.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 227,
+    title: "Foundation Sentence Flow 17",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 17.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 228,
+    title: "Foundation Sentence Flow 18",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 18.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 229,
+    title: "Foundation Sentence Flow 19",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 19.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 230,
+    title: "Foundation Sentence Flow 20",
+    description: "Type beginner sentences with punctuation and clean structure.",
+    category: "Foundations",
+    keysPracticed: "basic sentences",
+    content: "I keep my posture stable, type with calm focus, and improve accuracy during foundation session 20.",
+    goal: "94%+ accuracy across full sentence",
+    difficulty: "Medium"
+  },
+  {
+    id: 231,
+    title: "Foundation Master Review 1",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 1.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 232,
+    title: "Foundation Master Review 2",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 2.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 233,
+    title: "Foundation Master Review 3",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 3.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 234,
+    title: "Foundation Master Review 4",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 4.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 235,
+    title: "Foundation Master Review 5",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 5.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 236,
+    title: "Foundation Master Review 6",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 6.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 237,
+    title: "Foundation Master Review 7",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 7.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 238,
+    title: "Foundation Master Review 8",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 8.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 239,
+    title: "Foundation Master Review 9",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 9.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 240,
+    title: "Foundation Master Review 10",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 10.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 241,
+    title: "Foundation Master Review 11",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 11.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 242,
+    title: "Foundation Master Review 12",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 12.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 243,
+    title: "Foundation Master Review 13",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 13.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 244,
+    title: "Foundation Master Review 14",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 14.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 245,
+    title: "Foundation Master Review 15",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 15.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 246,
+    title: "Foundation Master Review 16",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 16.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 247,
+    title: "Foundation Master Review 17",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 17.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 248,
+    title: "Foundation Master Review 18",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 18.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 249,
+    title: "Foundation Master Review 19",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 19.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  },
+  {
+    id: 250,
+    title: "Foundation Master Review 20",
+    description: "Consolidate core basics before moving faster.",
+    category: "Foundations",
+    keysPracticed: "foundations review",
+    content: "Posture, home row, simple reaches, clean words, and clear sentences define my foundation review 20.",
+    goal: "Balanced speed and reliable precision",
+    difficulty: "Medium"
+  }
+
 ];
 
 export const LESSONS = lessons;

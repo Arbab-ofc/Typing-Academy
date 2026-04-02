@@ -11,7 +11,7 @@ export default function HeroSection({ currentLessonId }) {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean-400">Structured Typewriting Course</p>
           <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-            Build professional typing speed through 150 guided lessons.
+            Build professional typing speed through 250 guided lessons.
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
             Typing Academy helps you master posture, finger placement, row drills, punctuation, and real-world

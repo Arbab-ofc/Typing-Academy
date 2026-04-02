@@ -7,7 +7,9 @@ const phases = [
   { label: 'Punctuation', lessons: '37-42' },
   { label: 'Core Mastery', lessons: '43-50' },
   { label: 'Advanced Mastery', lessons: '51-100' },
-  { label: 'Foundation Booster', lessons: '101-150' }
+  { label: 'Foundation Booster 1', lessons: '101-150' },
+  { label: 'Foundation Booster 2', lessons: '151-200' },
+  { label: 'Foundation Booster 3', lessons: '201-250' }
 ];
 
 export default function RoadmapPreview() {

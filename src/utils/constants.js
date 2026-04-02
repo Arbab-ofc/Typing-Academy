@@ -4,7 +4,7 @@ export const STORAGE_KEYS = {
   recentResult: 'typing_academy_recent_result_v1'
 };
 
-export const TOTAL_LESSONS = 150;
+export const TOTAL_LESSONS = 250;
 
 export const DEFAULT_SETTINGS = {
   soundEnabled: false,
