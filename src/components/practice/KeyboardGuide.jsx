@@ -113,9 +113,10 @@ export default function KeyboardGuide({ keysPracticed }) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
       <p className="text-xs uppercase tracking-[0.16em] text-slate-400">Keyboard Guide</p>
-      <div className="mt-3 space-y-2 overflow-x-auto">
-        {KEYBOARD_ROWS.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-wrap gap-2">
+      <div className="mt-3 overflow-x-auto">
+        <div className="mx-auto flex min-w-max flex-col items-center gap-2 pb-1">
+          {KEYBOARD_ROWS.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex justify-center gap-2">
             {row.map((key) => {
               const active = activeKeys.has(key.value);
               return (
@@ -133,8 +134,9 @@ export default function KeyboardGuide({ keysPracticed }) {
                 </span>
               );
             })}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
