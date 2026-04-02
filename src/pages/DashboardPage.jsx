@@ -11,6 +11,7 @@ import { formatDuration } from '../utils/typing';
 
 export default function DashboardPage() {
   const { progress, progressSummary } = useAcademyContext();
+  const bestSession = [...progress.history].sort((a, b) => b.wpm - a.wpm)[0];
 
   const averageSessionTime = progress.totalSessions
     ? Math.round(progress.totalPracticeTime / progress.totalSessions)
@@ -74,6 +75,17 @@ export default function DashboardPage() {
             <RecentActivityList history={progress.history.slice(0, 8)} />
           </div>
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-white/10 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold text-white">Best Performance</h2>
+        {bestSession ? (
+          <p className="mt-2 text-sm text-slate-300">
+            Lesson {bestSession.lessonId}: {bestSession.wpm} WPM at {bestSession.accuracy}% accuracy.
+          </p>
+        ) : (
+          <p className="mt-2 text-sm text-slate-400">Complete a lesson to establish your best performance.</p>
+        )}
       </section>
 
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5">
