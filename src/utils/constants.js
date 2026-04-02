@@ -10,7 +10,8 @@ export const DEFAULT_SETTINGS = {
   soundEnabled: false,
   theme: 'dark',
   textSize: 'md',
-  panelSize: 'comfortable'
+  panelSize: 'comfortable',
+  hindiTransliterationEnabled: true
 };
 
 export const INITIAL_PROGRESS = {

@@ -16,7 +16,8 @@ export default function TypingPanel({
   onComplete,
   textSize = 'md',
   panelSize = 'comfortable',
-  language = 'english'
+  language = 'english',
+  transliterationEnabled = false
 }) {
   const {
     typedText,
@@ -50,7 +51,16 @@ export default function TypingPanel({
       ) : null}
 
       <TypingText targetText={lesson.content} typedText={typedText} activeIndex={activeIndex} textSize={textSize} />
-      <TypingInput value={typedText} onChange={onTextChange} disabled={isComplete} />
+      <TypingInput
+        value={typedText}
+        onChange={onTextChange}
+        disabled={isComplete}
+        transliterationHint={
+          language === 'hindi' && transliterationEnabled
+            ? 'Hindi transliteration is on: type English letters to generate Hindi script.'
+            : ''
+        }
+      />
 
       <KeyboardGuide keysPracticed={lesson.keysPracticed} language={language} />
 

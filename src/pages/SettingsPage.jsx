@@ -60,6 +60,16 @@ export default function SettingsPage() {
           }}
         />
 
+        <SettingToggle
+          label="Hindi Transliteration"
+          description="Type English letters and auto-convert to Hindi in Hindi lessons."
+          checked={settings.hindiTransliterationEnabled}
+          onChange={(value) => {
+            updateSetting('hindiTransliterationEnabled', value);
+            toast.info(`Hindi transliteration ${value ? 'enabled' : 'disabled'}`);
+          }}
+        />
+
         <SettingSelect
           label="Practice Text Size"
           value={settings.textSize}

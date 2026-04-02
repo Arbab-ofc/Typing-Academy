@@ -7,6 +7,7 @@ import { getLessonByLanguageAndId } from '../data/courseData';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import useTypingSession from '../hooks/useTypingSession';
 import { saveRecentResult } from '../utils/storage';
+import { transliterateToHindi } from '../utils/transliteration';
 
 export default function LessonPracticePage() {
   const { lessonId } = useParams();
@@ -19,7 +20,9 @@ export default function LessonPracticePage() {
 
   const session = useTypingSession({
     lessonId: numericLessonId,
-    targetText: lesson?.content ?? ''
+    targetText: lesson?.content ?? '',
+    inputTransformer:
+      activeLanguage === 'hindi' && settings.hindiTransliterationEnabled ? transliterateToHindi : undefined
   });
 
   const nextLessonId = useMemo(() => Math.min(50, numericLessonId + 1), [numericLessonId]);
@@ -92,6 +95,7 @@ export default function LessonPracticePage() {
         textSize={settings.textSize}
         panelSize={settings.panelSize}
         language={activeLanguage}
+        transliterationEnabled={activeLanguage === 'hindi' && settings.hindiTransliterationEnabled}
       />
     </div>
   );

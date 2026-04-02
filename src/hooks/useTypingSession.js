@@ -6,7 +6,7 @@ import {
   evaluateLessonCompletion
 } from '../utils/typing';
 
-export default function useTypingSession({ lessonId, targetText }) {
+export default function useTypingSession({ lessonId, targetText, inputTransformer }) {
   const [typedText, setTypedText] = useState('');
   const [startTime, setStartTime] = useState(null);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
@@ -53,7 +53,8 @@ export default function useTypingSession({ lessonId, targetText }) {
   const completionMeta = evaluateLessonCompletion(metrics.accuracy, metrics.wpm, lessonId);
 
   const onTextChange = (nextValue) => {
-    const limited = nextValue.slice(0, targetText.length);
+    const transformed = typeof inputTransformer === 'function' ? inputTransformer(nextValue) : nextValue;
+    const limited = transformed.slice(0, targetText.length);
 
     if (!startTime && limited.length > 0) {
       setStartTime(Date.now());
