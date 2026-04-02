@@ -5,11 +5,15 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 export default function AppLayout() {
-  const { settings } = useAcademyContext();
+  const { settings, updateSetting } = useAcademyContext();
 
   useEffect(() => {
-    document.documentElement.dataset.theme = settings.theme;
-  }, [settings.theme]);
+    // The UI is currently optimized for dark mode only.
+    document.documentElement.dataset.theme = 'dark';
+    if (settings.theme !== 'dark') {
+      updateSetting('theme', 'dark');
+    }
+  }, [settings.theme, updateSetting]);
 
   return (
     <div className="relative min-h-screen">

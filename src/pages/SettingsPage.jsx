@@ -39,15 +39,12 @@ export default function SettingsPage() {
           }}
         />
 
-        <SettingToggle
-          label="Dark Theme"
-          description="Keep dark-first interface styling enabled."
-          checked={settings.theme === 'dark'}
-          onChange={(value) => {
-            updateSetting('theme', value ? 'dark' : 'light');
-            toast.info(`Theme set to ${value ? 'dark' : 'light'}`);
-          }}
-        />
+        <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+          <p className="text-sm font-semibold text-white">Theme</p>
+          <p className="mt-1 text-sm text-slate-300">
+            Dark mode is currently enforced for best visibility across all screens.
+          </p>
+        </div>
 
         <SettingSelect
           label="Practice Text Size"
