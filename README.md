@@ -270,6 +270,20 @@ This is a frontend-only app and can be deployed to Vercel/Netlify/GitHub Pages.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Arbab-ofc/Typing-Academy)
 
+### Vercel Routing Safety
+
+This repository includes a `vercel.json` SPA rewrite fallback:
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+```
+
+This ensures direct URL refreshes for client routes like `/lessons/120` work correctly on Vercel.
+
 ### Production Output
 
 ```bash
