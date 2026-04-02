@@ -15,6 +15,7 @@ import SectionHeader from '../components/common/SectionHeader';
 import StatCard from '../components/common/StatCard';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import { TOTAL_LESSONS } from '../utils/constants';
+import { getCategoriesByLanguage } from '../data/courseData';
 
 const features = [
   {
@@ -50,7 +51,8 @@ const features = [
 ];
 
 export default function HomePage() {
-  const { progress, progressSummary } = useAcademyContext();
+  const { progress, progressSummary, activeLanguage } = useAcademyContext();
+  const categories = getCategoriesByLanguage(activeLanguage);
 
   return (
     <div className="space-y-10 sm:space-y-14 lg:space-y-16">
@@ -92,10 +94,10 @@ export default function HomePage() {
       <section>
         <SectionHeader
           eyebrow="Categories"
-          title="Curriculum coverage"
+          title={`Curriculum coverage (${activeLanguage === 'hindi' ? 'Hindi' : 'English'})`}
           description="Every category builds a specific capability in your typing skillset."
         />
-        <CategoryPreview />
+        <CategoryPreview categories={categories} />
       </section>
     </div>
   );

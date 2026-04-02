@@ -10,7 +10,14 @@ const panelClassMap = {
   spacious: 'space-y-6 p-6 sm:p-8'
 };
 
-export default function TypingPanel({ lesson, session, onComplete, textSize = 'md', panelSize = 'comfortable' }) {
+export default function TypingPanel({
+  lesson,
+  session,
+  onComplete,
+  textSize = 'md',
+  panelSize = 'comfortable',
+  language = 'english'
+}) {
   const {
     typedText,
     elapsedSeconds,
@@ -45,7 +52,7 @@ export default function TypingPanel({ lesson, session, onComplete, textSize = 'm
       <TypingText targetText={lesson.content} typedText={typedText} activeIndex={activeIndex} textSize={textSize} />
       <TypingInput value={typedText} onChange={onTextChange} disabled={isComplete} />
 
-      <KeyboardGuide keysPracticed={lesson.keysPracticed} />
+      <KeyboardGuide keysPracticed={lesson.keysPracticed} language={language} />
 
       <div className="flex flex-wrap gap-3">
         <button

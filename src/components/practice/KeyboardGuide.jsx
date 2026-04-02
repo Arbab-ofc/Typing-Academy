@@ -5,7 +5,28 @@ const rows = [
   ['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', ';']
 ];
 
-export default function KeyboardGuide({ keysPracticed }) {
+export default function KeyboardGuide({ keysPracticed, language = 'english' }) {
+  if (language === 'hindi') {
+    return (
+      <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">Hindi Keys Guide</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {String(keysPracticed)
+            .split(/\s+/)
+            .filter(Boolean)
+            .map((key) => (
+              <span
+                key={key}
+                className="inline-flex items-center justify-center rounded-md border border-ocean-500/40 bg-ocean-500/20 px-3 py-1 text-xs font-semibold text-ocean-100"
+              >
+                {key}
+              </span>
+            ))}
+        </div>
+      </section>
+    );
+  }
+
   const normalized = (keysPracticed || '').toUpperCase();
 
   return (

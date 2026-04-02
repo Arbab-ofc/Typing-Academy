@@ -1,5 +1,3 @@
-import { LESSONS } from '../data/lessons';
-
 export function getLessonStatus(lessonId, progress) {
   if (progress.completedLessons.includes(lessonId)) return 'completed';
   if (progress.currentLesson === lessonId) return 'current';
@@ -7,8 +5,8 @@ export function getLessonStatus(lessonId, progress) {
   return 'locked';
 }
 
-export function getCurrentLesson(progress) {
-  return LESSONS.find((lesson) => lesson.id === progress.currentLesson) || LESSONS[0];
+export function getCurrentLesson(progress, lessons) {
+  return lessons.find((lesson) => lesson.id === progress.currentLesson) || lessons[0];
 }
 
 export function getCompletedCount(progress) {

@@ -3,7 +3,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SectionHeader from '../components/common/SectionHeader';
 import TypingPanel from '../components/practice/TypingPanel';
-import { getLessonById } from '../data/lessons';
+import { getLessonByLanguageAndId } from '../data/courseData';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import useTypingSession from '../hooks/useTypingSession';
 import { saveRecentResult } from '../utils/storage';
@@ -11,8 +11,8 @@ import { saveRecentResult } from '../utils/storage';
 export default function LessonPracticePage() {
   const { lessonId } = useParams();
   const navigate = useNavigate();
-  const { progress, completeLesson, settings } = useAcademyContext();
-  const lesson = getLessonById(lessonId);
+  const { progress, completeLesson, settings, activeLanguage } = useAcademyContext();
+  const lesson = getLessonByLanguageAndId(activeLanguage, lessonId);
 
   const numericLessonId = Number(lessonId);
   const isUnlocked = progress.unlockedLessons.includes(numericLessonId);
@@ -44,7 +44,8 @@ export default function LessonPracticePage() {
       lessonId: numericLessonId,
       lessonTitle: lesson.title,
       ...result,
-      unlockedNextLesson: result.passed && numericLessonId < 50
+      unlockedNextLesson: result.passed && numericLessonId < 50,
+      language: activeLanguage
     });
 
     toast.success(result.passed ? 'Lesson passed and progress saved' : 'Lesson saved. Retry to unlock next lesson');
@@ -90,6 +91,7 @@ export default function LessonPracticePage() {
         onComplete={handleComplete}
         textSize={settings.textSize}
         panelSize={settings.panelSize}
+        language={activeLanguage}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LESSONS, LESSON_CATEGORIES } from '../data/lessons';
+import { getCategoriesByLanguage, getLessonsByLanguage } from '../data/courseData';
 import { useAcademyContext } from '../hooks/useAcademyContext';
 import { getLessonStatus } from '../utils/progressSelectors';
 import ProgressBar from '../components/common/ProgressBar';
@@ -14,17 +14,19 @@ export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [sortBy, setSortBy] = useState('id-asc');
-  const { progress, progressSummary } = useAcademyContext();
+  const { progress, progressSummary, activeLanguage } = useAcademyContext();
+  const lessons = getLessonsByLanguage(activeLanguage);
+  const lessonCategories = getCategoriesByLanguage(activeLanguage);
 
   const filteredLessons = useMemo(() => {
-    const base = activeCategory === 'All' ? LESSONS : LESSONS.filter((lesson) => lesson.category === activeCategory);
+    const base = activeCategory === 'All' ? lessons : lessons.filter((lesson) => lesson.category === activeCategory);
     if (!query.trim()) return base;
     const normalized = query.trim().toLowerCase();
     const filtered = base.filter((lesson) =>
       `${lesson.title} ${lesson.keysPracticed} ${lesson.description}`.toLowerCase().includes(normalized)
     );
     return filtered;
-  }, [activeCategory, query]);
+  }, [activeCategory, lessons, query]);
 
   const displayedLessons = useMemo(() => {
     const items = [...filteredLessons];
@@ -41,11 +43,11 @@ export default function LessonsPage() {
 
   const statusCounts = useMemo(
     () => ({
-      completed: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'completed').length,
-      unlocked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'unlocked').length,
-      locked: LESSONS.filter((lesson) => getLessonStatus(lesson.id, progress) === 'locked').length
+      completed: lessons.filter((lesson) => getLessonStatus(lesson.id, progress) === 'completed').length,
+      unlocked: lessons.filter((lesson) => getLessonStatus(lesson.id, progress) === 'unlocked').length,
+      locked: lessons.filter((lesson) => getLessonStatus(lesson.id, progress) === 'locked').length
     }),
-    [progress]
+    [lessons, progress]
   );
 
   return (
@@ -53,7 +55,7 @@ export default function LessonsPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <SectionHeader
           eyebrow="Lesson Path"
-          title="50 lessons to build complete typing fluency"
+          title={`50 ${activeLanguage === 'hindi' ? 'Hindi' : 'English'} lessons to build typing fluency`}
           description="Progress unlocks sequentially. Complete your current lesson to move forward."
           rightSlot={
             <Link
@@ -71,7 +73,7 @@ export default function LessonsPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
         <div className="grid gap-4 lg:grid-cols-[1fr_0.9fr]">
           <CategoryFilterChips
-            categories={LESSON_CATEGORIES}
+            categories={lessonCategories}
             activeCategory={activeCategory}
             onChange={setActiveCategory}
           />

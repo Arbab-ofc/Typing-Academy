@@ -2,12 +2,14 @@ import { useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ResultCard from '../components/practice/ResultCard';
-import { getLessonById } from '../data/lessons';
+import { getLessonByLanguageAndId } from '../data/courseData';
+import { useAcademyContext } from '../hooks/useAcademyContext';
 import { loadRecentResult } from '../utils/storage';
 
 export default function ResultPage() {
   const { lessonId } = useParams();
-  const lesson = getLessonById(lessonId);
+  const { activeLanguage } = useAcademyContext();
+  const lesson = getLessonByLanguageAndId(activeLanguage, lessonId);
   const result = loadRecentResult();
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export default function ResultPage() {
     }
   }, [result]);
 
-  if (!lesson || !result || Number(lessonId) !== result.lessonId) {
+  if (!lesson || !result || Number(lessonId) !== result.lessonId || result.language !== activeLanguage) {
     return <Navigate to="/lessons" replace />;
   }
 

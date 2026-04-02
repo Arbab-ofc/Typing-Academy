@@ -1,11 +1,12 @@
-import { LESSONS } from '../../data/lessons';
+import { getLessonsByLanguage } from '../../data/courseData';
 import EmptyState from '../common/EmptyState';
 
-export default function LessonStatsTable({ lessonStats }) {
+export default function LessonStatsTable({ lessonStats, language }) {
+  const lessons = getLessonsByLanguage(language);
   const rows = Object.entries(lessonStats)
     .map(([lessonId, stats]) => ({
       lessonId: Number(lessonId),
-      title: LESSONS.find((lesson) => lesson.id === Number(lessonId))?.title ?? `Lesson ${lessonId}`,
+      title: lessons.find((lesson) => lesson.id === Number(lessonId))?.title ?? `Lesson ${lessonId}`,
       ...stats
     }))
     .sort((a, b) => a.lessonId - b.lessonId)

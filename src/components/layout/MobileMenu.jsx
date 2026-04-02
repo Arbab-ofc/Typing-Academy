@@ -1,6 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
-export default function MobileMenu({ isOpen, links, onClose }) {
+export default function MobileMenu({
+  isOpen,
+  links,
+  onClose,
+  activeLanguage,
+  onLanguageChange,
+  availableLanguages
+}) {
   if (!isOpen) return null;
 
   return (
@@ -21,6 +28,20 @@ export default function MobileMenu({ isOpen, links, onClose }) {
           </NavLink>
         ))}
       </nav>
+      <label className="mt-3 block text-xs uppercase tracking-[0.1em] text-slate-400">
+        Language
+        <select
+          value={activeLanguage}
+          onChange={(event) => onLanguageChange(event.target.value)}
+          className="mt-2 w-full rounded-lg border border-white/10 bg-ink-950 px-3 py-2 text-xs text-slate-100"
+        >
+          {availableLanguages.map((language) => (
+            <option key={language.id} value={language.id}>
+              {language.label}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 }

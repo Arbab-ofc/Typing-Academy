@@ -14,12 +14,27 @@ export const DEFAULT_SETTINGS = {
 };
 
 export const INITIAL_PROGRESS = {
-  completedLessons: [],
-  unlockedLessons: [1],
-  currentLesson: 1,
-  lessonStats: {},
-  totalSessions: 0,
-  totalPracticeTime: 0,
-  history: [],
-  achievements: []
+  activeLanguage: 'english',
+  languages: {
+    english: {
+      completedLessons: [],
+      unlockedLessons: [1],
+      currentLesson: 1,
+      lessonStats: {},
+      totalSessions: 0,
+      totalPracticeTime: 0,
+      history: [],
+      achievements: []
+    },
+    hindi: {
+      completedLessons: [],
+      unlockedLessons: [1],
+      currentLesson: 1,
+      lessonStats: {},
+      totalSessions: 0,
+      totalPracticeTime: 0,
+      history: [],
+      achievements: []
+    }
+  }
 };

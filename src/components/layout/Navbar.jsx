@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import MobileMenu from './MobileMenu';
+import { useAcademyContext } from '../../hooks/useAcademyContext';
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -14,6 +15,7 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { activeLanguage, setActiveLanguage, availableLanguages } = useAcademyContext();
 
   useEffect(() => {
     setIsOpen(false);
@@ -43,6 +45,21 @@ export default function Navbar() {
           ))}
         </nav>
 
+        <div className="hidden md:block">
+          <select
+            value={activeLanguage}
+            onChange={(event) => setActiveLanguage(event.target.value)}
+            className="rounded-lg border border-white/10 bg-ink-900 px-2 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-slate-100"
+            aria-label="Select lesson language"
+          >
+            {availableLanguages.map((language) => (
+              <option key={language.id} value={language.id}>
+                {language.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -52,7 +69,14 @@ export default function Navbar() {
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
-      <MobileMenu isOpen={isOpen} links={navItems} onClose={() => setIsOpen(false)} />
+      <MobileMenu
+        isOpen={isOpen}
+        links={navItems}
+        onClose={() => setIsOpen(false)}
+        activeLanguage={activeLanguage}
+        onLanguageChange={setActiveLanguage}
+        availableLanguages={availableLanguages}
+      />
     </header>
   );
 }
