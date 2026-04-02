@@ -17,7 +17,8 @@ export default function TypingPanel({
   textSize = 'md',
   panelSize = 'comfortable',
   language = 'english',
-  transliterationEnabled = false
+  transliterationEnabled = false,
+  transliterationRequested = false
 }) {
   const {
     typedText,
@@ -59,7 +60,9 @@ export default function TypingPanel({
           language === 'hindi'
             ? transliterationEnabled
               ? 'Hindi transliteration is on: type English letters to generate Hindi script.'
-              : 'Hindi transliteration is off: use your Hindi keyboard layout for real key-position practice.'
+              : transliterationRequested
+                ? 'This lesson uses physical key drills (asdf-style), so transliteration is paused for accurate key-position practice.'
+                : 'Hindi transliteration is off: use your Hindi keyboard layout for real key-position practice.'
             : ''
         }
       />

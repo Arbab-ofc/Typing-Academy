@@ -17,12 +17,14 @@ export default function LessonPracticePage() {
 
   const numericLessonId = Number(lessonId);
   const isUnlocked = progress.unlockedLessons.includes(numericLessonId);
+  const hasHindiScriptTarget = /[\u0900-\u097F]/.test(lesson?.content ?? '');
+  const transliterationActive =
+    activeLanguage === 'hindi' && settings.hindiTransliterationEnabled && hasHindiScriptTarget;
 
   const session = useTypingSession({
     lessonId: numericLessonId,
     targetText: lesson?.content ?? '',
-    inputTransformer:
-      activeLanguage === 'hindi' && settings.hindiTransliterationEnabled ? transliterateToHindi : undefined
+    inputTransformer: transliterationActive ? transliterateToHindi : undefined
   });
 
   const nextLessonId = useMemo(() => Math.min(50, numericLessonId + 1), [numericLessonId]);
@@ -95,7 +97,8 @@ export default function LessonPracticePage() {
         textSize={settings.textSize}
         panelSize={settings.panelSize}
         language={activeLanguage}
-        transliterationEnabled={activeLanguage === 'hindi' && settings.hindiTransliterationEnabled}
+        transliterationEnabled={transliterationActive}
+        transliterationRequested={activeLanguage === 'hindi' && settings.hindiTransliterationEnabled}
       />
     </div>
   );
