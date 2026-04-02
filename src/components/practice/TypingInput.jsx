@@ -19,8 +19,12 @@ export default function TypingInput({ value, onChange, disabled }) {
         onChange={(event) => onChange(event.target.value)}
         disabled={disabled}
         placeholder="Start typing to begin the timer..."
+        aria-describedby="typing-input-help"
         className="h-28 w-full resize-none rounded-xl border border-white/10 bg-ink-900 p-3 font-mono text-sm text-white outline-none transition focus:border-ocean-500"
       />
+      <p id="typing-input-help" className="mt-2 text-xs text-slate-400">
+        Timer starts on your first keypress. Backspace is supported.
+      </p>
     </div>
   );
 }

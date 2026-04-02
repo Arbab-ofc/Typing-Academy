@@ -52,6 +52,7 @@ export default function LessonCard({ lesson, status }) {
       ) : (
         <Link
           to={`/lessons/${lesson.id}`}
+          aria-label={`${status === 'completed' ? 'Practice again' : status === 'current' ? 'Continue' : 'Start'} ${lesson.title}`}
           className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
         >
           {status === 'completed' ? 'Practice Again' : status === 'current' ? 'Continue Lesson' : 'Start Lesson'}
