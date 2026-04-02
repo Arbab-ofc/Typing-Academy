@@ -6,7 +6,7 @@ function readJSON(key, fallback) {
     if (!raw) return fallback;
     const parsed = JSON.parse(raw);
     return parsed ?? fallback;
-  } catch (error) {
+  } catch (_error) {
     return fallback;
   }
 }
