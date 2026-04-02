@@ -14,7 +14,21 @@ export default function StatsBar({ elapsedSeconds, metrics }) {
       {stats.map((item) => (
         <article key={item.label} className="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
           <p className="text-xs uppercase tracking-[0.16em] text-slate-400">{item.label}</p>
-          <p className="mt-1 font-display text-xl font-semibold text-white">{item.value}</p>
+          <p
+            className={`mt-1 font-display text-xl font-semibold ${
+              item.label === 'Accuracy'
+                ? metrics.accuracy >= 95
+                  ? 'text-mint-300'
+                  : metrics.accuracy >= 90
+                    ? 'text-white'
+                    : 'text-rose-300'
+                : item.label === 'WPM' && metrics.wpm >= 30
+                  ? 'text-ocean-300'
+                  : 'text-white'
+            }`}
+          >
+            {item.value}
+          </p>
         </article>
       ))}
     </div>
