@@ -9,6 +9,7 @@ A premium, lesson-first typewriting platform with **250 guided practices**, dual
 [![Toastify](https://img.shields.io/badge/React_Toastify-UI_Notifications-FF6A3D)](https://fkhadra.github.io/react-toastify/)
 [![Status](https://img.shields.io/badge/Status-Production_Ready-0EA5E9)](#)
 [![Lessons](https://img.shields.io/badge/Lessons-250-16A34A)](#curriculum)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Arbab-ofc/Typing-Academy)
 
 ---
 
@@ -264,6 +265,10 @@ src/
 ## Deployment
 
 This is a frontend-only app and can be deployed to Vercel/Netlify/GitHub Pages.
+
+### One-Click Deploy (Vercel)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Arbab-ofc/Typing-Academy)
 
 ### Production Output
 
