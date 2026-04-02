@@ -5,22 +5,22 @@ export default function MobileMenu({ isOpen, links, onClose }) {
 
   return (
     <div className="px-4 pb-4 pt-2 md:hidden">
-      <div className="overflow-hidden rounded-2xl border border-white/15 bg-ink-900/95 shadow-panel backdrop-blur">
+      <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-panel">
         <div className="border-b border-white/10 px-4 py-3">
-          <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Menu</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Navigation</p>
         </div>
 
-        <nav className="grid gap-1 p-2">
+        <nav className="grid gap-2 p-3">
           {links.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `rounded-xl px-4 py-3 text-sm font-semibold transition ${
+                `rounded-xl border px-4 py-3 text-sm font-semibold transition ${
                   isActive
-                    ? 'bg-gradient-to-r from-ocean-500/30 to-mint-500/30 text-white'
-                    : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                    ? 'border-ocean-500/40 bg-ocean-500/20 text-white'
+                    : 'border-white/10 text-slate-200 hover:bg-white/10 hover:text-white'
                 }`
               }
             >
