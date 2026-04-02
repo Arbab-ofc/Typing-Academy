@@ -7,15 +7,21 @@ import ProgressBar from '../components/common/ProgressBar';
 import SectionHeader from '../components/common/SectionHeader';
 import LessonCard from '../components/lessons/LessonCard';
 import CategoryFilterChips from '../components/lessons/CategoryFilterChips';
+import LessonSearch from '../components/lessons/LessonSearch';
 
 export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [query, setQuery] = useState('');
   const { progress, progressSummary } = useAcademyContext();
 
   const filteredLessons = useMemo(() => {
-    if (activeCategory === 'All') return LESSONS;
-    return LESSONS.filter((lesson) => lesson.category === activeCategory);
-  }, [activeCategory]);
+    const base = activeCategory === 'All' ? LESSONS : LESSONS.filter((lesson) => lesson.category === activeCategory);
+    if (!query.trim()) return base;
+    const normalized = query.trim().toLowerCase();
+    return base.filter((lesson) =>
+      `${lesson.title} ${lesson.keysPracticed} ${lesson.description}`.toLowerCase().includes(normalized)
+    );
+  }, [activeCategory, query]);
 
   return (
     <div className="space-y-8">
@@ -38,11 +44,14 @@ export default function LessonsPage() {
       </section>
 
       <section className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-        <CategoryFilterChips
-          categories={LESSON_CATEGORIES}
-          activeCategory={activeCategory}
-          onChange={setActiveCategory}
-        />
+        <div className="grid gap-4 lg:grid-cols-[1fr_0.9fr]">
+          <CategoryFilterChips
+            categories={LESSON_CATEGORIES}
+            activeCategory={activeCategory}
+            onChange={setActiveCategory}
+          />
+          <LessonSearch query={query} onChange={setQuery} />
+        </div>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
