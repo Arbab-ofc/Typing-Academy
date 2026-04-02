@@ -127,9 +127,11 @@ Free practice mode:
 
 ## Curriculum Map (250 Lessons)
 
+### Map A: Core Path (1-100)
+
 ```mermaid
-flowchart TD
-  A[Typing Academy: 250 Lessons]
+flowchart LR
+  A[Core Curriculum 1-100]
   A --> B[Foundations: 1-8]
   A --> C[Top Row: 9-16]
   A --> D[Bottom Row: 17-24]
@@ -138,9 +140,16 @@ flowchart TD
   A --> G[Punctuation and Symbols: 37-42]
   A --> H[Core Mastery: 43-50]
   A --> I[Advanced Mastery: 51-100]
-  A --> J[Foundation Booster 1: 101-150]
-  A --> K[Foundation Booster 2: 151-200]
-  A --> L[Foundation Booster 3: 201-250]
+```
+
+### Map B: Foundation Boosters (101-250)
+
+```mermaid
+flowchart LR
+  X[Foundation Booster Track 101-250]
+  X --> Y[Foundation Booster 1: 101-150]
+  X --> Z[Foundation Booster 2: 151-200]
+  X --> W[Foundation Booster 3: 201-250]
 ```
 
 ### High-Level Phase Distribution
