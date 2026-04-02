@@ -8,6 +8,7 @@ import SectionHeader from '../components/common/SectionHeader';
 import LessonCard from '../components/lessons/LessonCard';
 import CategoryFilterChips from '../components/lessons/CategoryFilterChips';
 import LessonSearch from '../components/lessons/LessonSearch';
+import EmptyState from '../components/common/EmptyState';
 
 export default function LessonsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -111,9 +112,18 @@ export default function LessonsPage() {
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {displayedLessons.map((lesson) => (
-          <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress)} />
-        ))}
+        {displayedLessons.length ? (
+          displayedLessons.map((lesson) => (
+            <LessonCard key={lesson.id} lesson={lesson} status={getLessonStatus(lesson.id, progress)} />
+          ))
+        ) : (
+          <div className="sm:col-span-2 xl:col-span-3">
+            <EmptyState
+              title="No lessons found"
+              description="Try a different category or keyword to find matching lessons."
+            />
+          </div>
+        )}
       </section>
     </div>
   );
