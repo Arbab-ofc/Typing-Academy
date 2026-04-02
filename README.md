@@ -9,6 +9,8 @@ A premium, lesson-first typewriting platform with **250 guided practices**, dual
 [![Toastify](https://img.shields.io/badge/React_Toastify-UI_Notifications-FF6A3D)](https://fkhadra.github.io/react-toastify/)
 [![Status](https://img.shields.io/badge/Status-Production_Ready-0EA5E9)](#)
 [![Lessons](https://img.shields.io/badge/Lessons-250-16A34A)](#curriculum)
+[![Live App](https://img.shields.io/badge/Live-typing--academy--one.vercel.app-000000?logo=vercel&logoColor=white)](https://typing-academy-one.vercel.app)
+[![Deployment URL](https://img.shields.io/badge/Deployment-typing--academy--ii3oy7yd7--arbab--arshads--projects.vercel.app-111827?logo=vercel&logoColor=white)](https://typing-academy-ii3oy7yd7-arbab-arshads-projects.vercel.app)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Arbab-ofc/Typing-Academy)
 
 ---
@@ -266,9 +268,10 @@ src/
 
 This is a frontend-only app and can be deployed to Vercel/Netlify/GitHub Pages.
 
-### One-Click Deploy (Vercel)
+### Live Deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Arbab-ofc/Typing-Academy)
+- Primary domain: https://typing-academy-one.vercel.app
+- Deployment URL: https://typing-academy-ii3oy7yd7-arbab-arshads-projects.vercel.app
 
 ### Vercel Routing Safety
 
