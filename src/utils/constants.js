@@ -11,7 +11,7 @@ export const DEFAULT_SETTINGS = {
   theme: 'dark',
   textSize: 'md',
   panelSize: 'comfortable',
-  hindiTransliterationEnabled: true
+  hindiTransliterationEnabled: false
 };
 
 export const INITIAL_PROGRESS = {

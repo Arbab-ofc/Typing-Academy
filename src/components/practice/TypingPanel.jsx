@@ -56,8 +56,10 @@ export default function TypingPanel({
         onChange={onTextChange}
         disabled={isComplete}
         transliterationHint={
-          language === 'hindi' && transliterationEnabled
-            ? 'Hindi transliteration is on: type English letters to generate Hindi script.'
+          language === 'hindi'
+            ? transliterationEnabled
+              ? 'Hindi transliteration is on: type English letters to generate Hindi script.'
+              : 'Hindi transliteration is off: use your Hindi keyboard layout for real key-position practice.'
             : ''
         }
       />

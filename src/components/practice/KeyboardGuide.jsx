@@ -67,11 +67,11 @@ function getActiveHindiKeys(keysPracticed) {
   const input = String(keysPracticed || '');
   const tokens = input
     .split(/[\s,+/]+/)
-    .map((token) => token.trim())
+    .map((token) => token.trim().toUpperCase())
     .filter(Boolean);
 
   const chars = input.split('').filter((char) => /[\u0900-\u097F]/.test(char));
-  return new Set([...tokens, ...chars]);
+  return new Set([...tokens, ...chars, ...chars.map((char) => char.toUpperCase())]);
 }
 
 export default function KeyboardGuide({ keysPracticed, language = 'english' }) {
@@ -85,7 +85,10 @@ export default function KeyboardGuide({ keysPracticed, language = 'english' }) {
           {hindiRows.map((row, rowIndex) => (
             <div key={rowIndex} className="flex flex-wrap gap-2">
               {row.map((cell) => {
-                const active = activeHindiKeys.has(cell.primary) || activeHindiKeys.has(cell.shift);
+                const active =
+                  activeHindiKeys.has(cell.primary) ||
+                  activeHindiKeys.has(cell.shift) ||
+                  activeHindiKeys.has(cell.key.toUpperCase());
                 return (
                   <span
                     key={cell.key}
