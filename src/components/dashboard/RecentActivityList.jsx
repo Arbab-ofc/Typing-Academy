@@ -1,8 +1,9 @@
 import { formatDuration } from '../../utils/typing';
+import EmptyState from '../common/EmptyState';
 
 export default function RecentActivityList({ history }) {
   if (!history.length) {
-    return <p className="text-sm text-slate-400">No sessions yet. Complete a lesson to populate activity.</p>;
+    return <EmptyState title="No Activity Yet" description="Complete a lesson to populate recent sessions." />;
   }
 
   return (

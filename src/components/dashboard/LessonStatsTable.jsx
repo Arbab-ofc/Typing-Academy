@@ -1,4 +1,5 @@
 import { LESSONS } from '../../data/lessons';
+import EmptyState from '../common/EmptyState';
 
 export default function LessonStatsTable({ lessonStats }) {
   const rows = Object.entries(lessonStats)
@@ -12,7 +13,7 @@ export default function LessonStatsTable({ lessonStats }) {
     .reverse();
 
   if (!rows.length) {
-    return <p className="text-sm text-slate-400">No lesson stats yet.</p>;
+    return <EmptyState title="No Lesson Stats" description="Finish at least one lesson to unlock analytics." />;
   }
 
   return (
