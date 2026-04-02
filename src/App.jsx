@@ -11,16 +11,15 @@ export default function App() {
         <AppRoutes />
       </AcademyProvider>
       <ToastContainer
-        position="top-right"
-        autoClose={2600}
-        hideProgressBar={false}
+        position="bottom-right"
+        autoClose={2200}
+        hideProgressBar
         newestOnTop
         closeOnClick
         pauseOnHover
         className="lux-toast-container"
         toastClassName={() => 'lux-toast'}
         bodyClassName={() => 'lux-toast-body'}
-        progressClassName="lux-toast-progress"
         theme="light"
       />
     </BrowserRouter>

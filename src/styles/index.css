@@ -236,53 +236,26 @@ body {
   }
 }
 
-/* Luxury Toast Skin */
+/* Toast Skin */
 .lux-toast-container {
-  width: min(380px, calc(100vw - 1.5rem));
+  width: min(360px, calc(100vw - 1rem));
 }
 
 .Toastify__toast.lux-toast {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  background: linear-gradient(135deg, rgb(13 20 36 / 0.95), rgb(12 25 44 / 0.9));
-  box-shadow: 0 16px 36px rgb(7 11 22 / 0.4);
-  backdrop-filter: blur(10px);
-  min-height: 64px;
+  border-radius: 14px;
+  border: 1px solid rgb(148 163 184 / 0.2);
+  background: rgb(15 23 42 / 0.92);
+  box-shadow: 0 12px 24px rgb(2 6 23 / 0.28);
+  min-height: 58px;
   padding: 0;
-}
-
-.Toastify__toast.lux-toast::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, #34c8ff, #3be2b4);
-}
-
-.Toastify__toast.lux-toast.Toastify__toast--success::before {
-  background: linear-gradient(180deg, #3be2b4, #26c59b);
-}
-
-.Toastify__toast.lux-toast.Toastify__toast--error::before {
-  background: linear-gradient(180deg, #fb7185, #e11d48);
-}
-
-.Toastify__toast.lux-toast.Toastify__toast--warning::before {
-  background: linear-gradient(180deg, #fbbf24, #f59e0b);
-}
-
-.Toastify__toast.lux-toast.Toastify__toast--info::before {
-  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
 }
 
 .Toastify__toast-body.lux-toast-body {
   margin: 0;
-  padding: 12px 14px 12px 16px;
+  padding: 12px 14px;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   line-height: 1.35;
   color: rgb(241 245 249);
 }
@@ -296,15 +269,10 @@ body {
   opacity: 1;
 }
 
-.Toastify__progress-bar.lux-toast-progress {
-  height: 3px;
-  background: linear-gradient(90deg, #34c8ff, #3be2b4);
-}
-
 :root[data-theme='light'] .Toastify__toast.lux-toast {
-  border-color: rgb(2 132 199 / 0.2);
-  background: linear-gradient(135deg, rgb(255 255 255 / 0.98), rgb(241 245 249 / 0.96));
-  box-shadow: 0 12px 28px rgb(15 23 42 / 0.14);
+  border-color: rgb(148 163 184 / 0.28);
+  background: rgb(255 255 255 / 0.98);
+  box-shadow: 0 10px 20px rgb(15 23 42 / 0.1);
 }
 
 :root[data-theme='light'] .Toastify__toast-body.lux-toast-body {
